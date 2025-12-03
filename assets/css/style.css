@@ -491,14 +491,9 @@
 }
 
 @media (max-width: 430px) {
-  .navbar {
-    padding: 10px 16px;
-    gap: 10px;
-  }
+ 
 
-  .navbar img {
-    height: 90px;
-  }
+  
 
   .hero {
     padding: 100px 16px 24px;
