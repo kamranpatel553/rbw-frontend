@@ -153,9 +153,7 @@ body {
 
 /* ===== NAVBAR RESPONSIVE (COMMON) ===== */
 @media (max-width: 900px) {
-  .logo img {
-    height: 110px;
-  }
+  
 
   .hamburger {
     display: flex;
