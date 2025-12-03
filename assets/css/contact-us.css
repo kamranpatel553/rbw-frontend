@@ -6,7 +6,6 @@
   --white: #fff;
   --muted: #6b7280;
   --transition: all 0.3s ease;
-
 }
 
 /* ========== GLOBAL RESET ========== */
@@ -24,7 +23,7 @@ body {
   padding-top: 80px;
 }
 
-/* ========== NAVBAR ========== */
+/* ========== NAVBAR (COMMON – SAME AS style.css / product.css) ========== */
 .navbar {
   position: fixed;
   left: 0;
@@ -36,21 +35,24 @@ body {
   gap: 18px;
   z-index: 1000;
   padding: 12px 28px;
-
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 255, 255, 0.7));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.7)
+  );
   backdrop-filter: blur(6px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-  height: 150px;
+  height: 130px;
 }
 
-/* nav links container */
-.navbar .nav-links {
+.nav-links {
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .navbar ul {
@@ -74,47 +76,47 @@ body {
   color: var(--blinds);
 }
 
-/* Get Quote button inside navbar */
-.navbar .btn {
+/* Desktop CTA button */
+.cta .btn {
   border: 2px solid var(--roller);
   padding: 12px 22px;
   border-radius: 8px;
   text-decoration: none;
   color: var(--roller);
   font-weight: 600;
+  background: transparent;
   transition: 0.3s;
 }
 
-.navbar .btn:hover {
+.cta .btn:hover {
   background: var(--blinds);
   border-color: var(--blinds);
   color: var(--white);
 }
 
-/* CTA button (generic) */
+/* Generic .btn */
 .btn {
-  border: 1.8px solid var(--primary);
+  border: 2px solid var(--roller);
   padding: 8px 18px;
   border-radius: 6px;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
   transition: var(--transition);
-  color: var(--primary);
+  color: var(--roller);
+  background: transparent;
 }
 
 .btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--blinds);
+  border-color: var(--blinds);
   color: var(--white);
 }
 
-/* ===== HAMBURGER ICON (NAVBAR) ===== */
+/* HAMBURGER ICON */
 .hamburger {
   display: none;
-  /* desktop par hidden */
   margin-left: auto;
-  /* right side push */
   flex-direction: column;
   gap: 5px;
   width: 30px;
@@ -149,8 +151,60 @@ body {
   display: none;
 }
 
-/* ===== PURANA NAVBAR RESPONSIVE BLOCK HATA DIYA ===== */
-/* (naya hamburger-based block neeche hai) */
+/* ===== NAVBAR RESPONSIVE (HAMBURGER) – 900px ===== */
+@media (max-width: 900px) {
+  .logo img {
+    height: 110px;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1200;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px; /* navbar height */
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    display: none;
+    flex-direction: column;
+    padding: 15px 20px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+  }
+
+  .mobile-cta {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .mobile-cta .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
 
 /* =========================
    CONTACT SECTION
@@ -216,10 +270,8 @@ body {
 
 /* MAP CARD */
 .map-card {
-  
   padding: 0px;
   border-radius: 20px;
-
   width: 100%;
   display: flex;
 }
@@ -498,66 +550,6 @@ body {
   }
 }
 
-/* ===== NAVBAR RESPONSIVE (HAMBURGER) ===== */
-@media (max-width: 900px) {
-  .logo img {
-    height: 90px;
-  }
-
-  /* hamburger visible */
-  .hamburger {
-    display: flex;
-    z-index: 1200;
-  }
-
-  /* dropdown style nav */
-  .navbar .nav-links {
-    position: absolute;
-    top: 80px;
-    /* navbar height */
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    display: none;
-    flex: none;
-    flex-direction: column;
-    padding: 15px 20px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar .nav-links.open {
-    display: flex;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .navbar ul li a {
-    width: 100%;
-  }
-
-  /* desktop CTA hide on mobile */
-  .cta {
-    display: none;
-  }
-
-  /* Get Quote inside mobile menu */
-  .mobile-cta {
-    display: block;
-    width: 100%;
-    margin-top: 8px;
-  }
-
-  .mobile-cta .btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-}
-
 /* whatsapp */
 .whatsapp_float {
   position: fixed;
@@ -578,7 +570,6 @@ body {
   padding: 12px;
 }
 
-/* whatsapp ended */
 /* ============ FOOTER ============ */
 
 .footer {
@@ -604,7 +595,6 @@ body {
   width: 220px;
   display: block;
   margin-top: -35px;
-  /* slight up */
   margin-left: -60px;
 }
 
@@ -645,7 +635,6 @@ body {
   transform: scale(1.15);
 }
 
-/* ============ FOOTER ENDS ============ */
 /* FOOTER RESPONSIVENESS */
 /* Tablet and small laptop */
 @media (max-width: 1024px) {
@@ -704,4 +693,142 @@ body {
   }
 }
 
+
 /* FOOTER RESPONSIVENESS ENDS */
+
+/* FAQs starts*/
+/* ===== FAQ SECTION ===== */
+
+.faq-block {
+  padding: 10px 0 70px;
+}
+
+.faq-container {
+  flex-direction: column;
+}
+
+.faq-inner {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 30px 30px 10px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.faq-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--roller);
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+/* Accordion */
+.faq-accordion {
+  border-top: 1px solid #ddd;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 18px 4px;
+  font-size: 17px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#333;
+  transition: var(--transition);
+}
+
+
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--roller);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: var(--transition);
+}
+
+.faq-item.active .faq-icon {
+  background: var(--blinds);
+  border-color: var(--blinds);
+  color: var(--white);
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 15px;
+  padding: 0 0;
+  color: var(--muted);
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 700px;
+  opacity: 1;
+  padding: 0 0 20px;
+}
+
+/* Table */
+/* Simple Comparison Table */
+.faq-table-box {
+  margin: 10px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e1e1e1;
+  background: #fff;
+}
+
+.faq-table-box table {
+  width: 100%;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+.faq-table-box th, 
+.faq-table-box td {
+  padding: 10px 12px;
+  border: 1px solid #e1e1e1;
+  text-align: left;
+  color: var(--text);
+}
+
+.faq-table-box th {
+  font-weight: 600;
+  color: var(--roller);
+  background: #f6f6f6;
+}
+
+.faq-table-box td {
+  background: #ffffff;
+}
+
+
+.faq-table-box tr:nth-child(even) {
+  background: #eefaff;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .faq-title {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+/* FAQS ends */

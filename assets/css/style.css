@@ -15,7 +15,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* =======NAVBAR ========= */
+/* ======= NAVBAR (COMMON) ========= */
 .navbar {
   position: fixed;
   left: 0;
@@ -27,15 +27,24 @@
   align-items: center;
   z-index: 1000;
   padding: 12px 28px;
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 255, 255, 0.7));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.7)
+  );
   backdrop-filter: blur(6px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.navbar img {
-  height: 150px;
+.logo img {
+  height: 130px;
+}
+
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .navbar ul {
@@ -46,10 +55,6 @@
   justify-content: flex-end;
   margin: 0;
   padding: 0;
-}
-
-.navbar .nav-links {
-  flex: 1;
 }
 
 .navbar a {
@@ -63,33 +68,44 @@
   color: var(--blinds);
 }
 
-.navbar .btn {
+/* Desktop CTA button */
+.cta .btn {
   border: 2px solid var(--roller);
   padding: 12px 22px;
   border-radius: 8px;
   text-decoration: none;
   color: var(--roller);
   font-weight: 600;
+  background: transparent;
   transition: 0.3s;
 }
 
-.navbar .btn:hover {
+.cta .btn:hover {
   background: var(--blinds);
   border: 2px solid var(--blinds);
   color: var(--white);
 }
-
-.mobile-cta {
-  display: none;
-  /* default: hidden on desktop */
+.btn {
+  border: 2px solid var(--roller);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--roller);
+  background: transparent;
+  transition: var(--transition);
 }
 
-/* =======NAVBAR ENDS ========= */
-/* HAMBURGER ICON (DESKTOP PAR HIDDEN) */
+/* Mobile CTA (inside menu, by default hidden) */
+.mobile-cta {
+  display: none;
+}
+
+/* HAMBURGER ICON */
 .hamburger {
   display: none;
   margin-left: auto;
-  /* right side push */
   flex-direction: column;
   gap: 5px;
   width: 30px;
@@ -119,6 +135,56 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
+/* ===== NAVBAR RESPONSIVE (COMMON) ===== */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    display: none;
+    flex-direction: column;
+    padding: 15px 20px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+  }
+
+  .mobile-cta {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .mobile-cta .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* =======HERO SECTION=========== */
 .hero {
   height: 100vh;
@@ -139,9 +205,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg,
-      rgba(11, 58, 102, 0.55),
-      rgba(11, 58, 102, 0.22));
+  background: linear-gradient(
+    180deg,
+    rgba(11, 58, 102, 0.55),
+    rgba(11, 58, 102, 0.22)
+  );
   z-index: -1;
 }
 
@@ -374,10 +442,7 @@
   transform: scale(1.1);
 }
 
-/* ========GALLERY SECTION GRID BOX STYLING CODES ENDS========== */
-
-/* =========RESPONSIVE (GLOBAL) TILL GALLREY GRID=========== */
-
+/* =========RESPONSIVE (GLOBAL) TILL GALLERY GRID=========== */
 @media (max-width: 900px) {
   .hero {
     padding: 90px 10px 16px;
@@ -452,69 +517,6 @@
   }
 }
 
-/* =========RESPONSIVE (GLOBAL) TILL GALLREY GRID CODE ENDS=========== */
-
-/* ======== NAVBAR RESPONSIVENESS (WITH HAMBURGER) ============= */
-
-/* Tablet + Mobile */
-@media (max-width: 900px) {
-  .navbar img {
-    height: 110px;
-  }
-
-  /* Hamburger visible, right side */
-  .hamburger {
-    display: flex;
-  }
-
-  /* Nav-links dropdown ban jayega */
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    /* navbar height */
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    display: none;
-    flex-direction: column;
-    padding: 15px 20px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .navbar ul li a {
-    width: 100%;
-  }
-
-  /* CTA hide on mobile (chaho to baad me menu ke andar le aayenge) */
-  .cta {
-    display: none;
-  }
-
-  .mobile-cta {
-    display: block;
-    width: 100%;
-    margin-top: 8px;
-  }
-
-  .mobile-cta .btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* ======== NAVBAR RESPONSIVENESS CODE ENDS HERE============= */
-
 /* ======== WHATSAPP FLOAT BUTTON============= */
 .whatsapp_float {
   position: fixed;
@@ -535,8 +537,6 @@
   padding: 12px;
 }
 
-/* ======== WHATSAPP FLOAT BUTTON ENDS============= */
-
 /* ============ FOOTER ============ */
 
 .footer {
@@ -546,7 +546,6 @@
   font-family: "Poppins", sans-serif;
   height: 32vh;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-
 }
 
 .footer-container {
@@ -563,7 +562,6 @@
   width: 220px;
   display: block;
   margin-top: -35px;
-  /* slight up */
   margin-left: -60px;
 }
 
@@ -604,7 +602,6 @@
   transform: scale(1.15);
 }
 
-/* ============ FOOTER ENDS ============ */
 /* FOOTER RESPONSIVENESS */
 /* Tablet and small laptop */
 @media (max-width: 1024px) {
@@ -662,5 +659,3 @@
     width: 26px;
   }
 }
-
-/* FOOTER RESPONSIVENESS ENDS */

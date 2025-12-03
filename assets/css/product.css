@@ -20,37 +20,39 @@
 body {
   background: var(--bg);
   color: var(--text);
-  padding-top: 80px;
+  padding-top: 80px; /* fixed navbar ke niche content */
 }
 
-/* ========== NAVBAR ========== */
+/* ======= NAVBAR (COMMON) ========= */
 .navbar {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   height: 80px;
+  gap: 18px;
   display: flex;
   align-items: center;
-  gap: 18px;
   z-index: 1000;
   padding: 12px 28px;
-
-  /* same transparent gradient / blur */
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 255, 255, 0.7));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.7)
+  );
   backdrop-filter: blur(6px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-  height: 150px;
+  height: 130px;
 }
 
-/* nav links container */
-.navbar .nav-links {
+.nav-links {
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .navbar ul {
@@ -74,47 +76,52 @@ body {
   color: var(--blinds);
 }
 
-/* Get Quote button inside navbar */
-.navbar .btn {
+/* Desktop CTA button */
+.cta .btn {
   border: 2px solid var(--roller);
   padding: 12px 22px;
   border-radius: 8px;
   text-decoration: none;
   color: var(--roller);
   font-weight: 600;
+  background: transparent;
   transition: 0.3s;
 }
 
-.navbar .btn:hover {
+.cta .btn:hover {
+  background: var(--blinds);
+  border: 2px solid var(--blinds);
+  color: var(--white);
+}
+
+/* Generic .btn (also used in mobile menu) */
+.btn {
+  border: 2px solid var(--roller);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--roller);
+  background: transparent;
+  transition: var(--transition);
+}
+
+.btn:hover {
   background: var(--blinds);
   border-color: var(--blinds);
   color: var(--white);
 }
 
-/* Generic CTA button (used elsewhere too) */
-.btn {
-  border: 1.8px solid var(--primary);
-  padding: 8px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: var(--transition);
-  color: var(--primary);
+/* Mobile CTA (inside menu, by default hidden) */
+.mobile-cta {
+  display: none;
 }
 
-.btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--white);
-}
-
-/* ===== HAMBURGER ICON (NAVBAR) ===== */
+/* HAMBURGER ICON */
 .hamburger {
   display: none;
-  /* desktop par hidden */
   margin-left: auto;
-  /* right side push */
   flex-direction: column;
   gap: 5px;
   width: 30px;
@@ -144,9 +151,58 @@ body {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Get Quote (inside menu) – default hidden on desktop */
-.mobile-cta {
-  display: none;
+/* ===== NAVBAR RESPONSIVE (COMMON) ===== */
+@media (max-width: 900px) {
+  .logo img {
+    height: 110px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    display: none;
+    flex-direction: column;
+    padding: 15px 20px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+  }
+
+  .mobile-cta {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .mobile-cta .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* ========== ROLLER BLINDS HEADING ========== */
@@ -154,7 +210,6 @@ body {
   width: 100%;
   text-align: center;
   padding: 40px 20px 20px;
-  /* navbar spacing */
 }
 
 .hero h1 {
@@ -164,7 +219,6 @@ body {
   letter-spacing: 0.5px;
   display: inline-block;
   padding-bottom: 6px;
-
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -173,12 +227,9 @@ body {
 .roller-intro {
   max-width: 1100px;
   margin: 20px auto 60px;
-
   display: flex;
   flex-direction: row;
-
   align-items: center;
-
   min-height: 200px;
 }
 
@@ -190,7 +241,6 @@ body {
 .intro-image img {
   width: 100%;
   height: 210px;
-  /* image height */
   object-fit: cover;
   display: block;
 }
@@ -198,14 +248,12 @@ body {
 /* Right: text box */
 .intro-text {
   flex: 1.1;
-  background: var(--beige);
+  background: #f9f9f9;
   padding: 22px 32px;
-  /*  compact */
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  /* image uniform feel */
 }
 
 .intro-text h2 {
@@ -254,7 +302,7 @@ body {
   height: 100%;
 }
 
-/* 4-column grid (auto rows: 4x2, 4x3, 4x4...) */
+/* 4-column grid */
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -330,7 +378,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* 5-column grid (auto rows: 5x2, 5x3, ...) */
+/* products grid */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -338,7 +386,6 @@ body {
 }
 
 /* Product cards */
-
 .product-card {
   background: #ffffff;
   border-radius: 4px;
@@ -347,6 +394,8 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+  cursor: pointer;
 }
 
 .product-card img {
@@ -354,6 +403,7 @@ body {
   height: 200px;
   object-fit: cover;
   display: block;
+  transition: opacity 0.35s ease-in-out;
 }
 
 .product-card h3 {
@@ -377,17 +427,7 @@ body {
   color: #555;
 }
 
-/* Universal Hover Image Swap */
-.product-card {
-  position: relative;
-}
-
-.product-card img {
-  width: 100%;
-  display: block;
-  transition: opacity 0.35s ease-in-out;
-}
-
+/* Hover image swap */
 .product-card .img-hover {
   position: absolute;
   inset: 0;
@@ -415,7 +455,7 @@ body {
   }
 }
 
-/* Mobile landscape / small tablet (layout, grids, hero) */
+/* Mobile landscape / small tablet */
 @media (max-width: 900px) {
   .hero {
     padding: 60px 10px 16px;
@@ -449,70 +489,9 @@ body {
 
 /* Small mobile grids */
 @media (max-width: 600px) {
-
   .category-grid,
   .products-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-/* ===== NAVBAR RESPONSIVE (HAMBURGER) ===== */
-@media (max-width: 900px) {
-  .logo img {
-    height: 90px;
-  }
-
-  /* hamburger visible */
-  .hamburger {
-    display: flex;
-    z-index: 1200;
-  }
-
-  /* dropdown style nav */
-  .navbar .nav-links {
-    position: absolute;
-    top: 80px;
-    /* navbar height */
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    display: none;
-    flex: none;
-    flex-direction: column;
-    padding: 15px 20px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar .nav-links.open {
-    display: flex;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .navbar ul li a {
-    width: 100%;
-  }
-
-  /* desktop CTA hide on mobile */
-  .cta {
-    display: none;
-  }
-
-  /* Get Quote inside mobile menu */
-  .mobile-cta {
-    display: block;
-    width: 100%;
-    margin-top: 8px;
-  }
-
-  .mobile-cta .btn {
-    display: block;
-    width: 100%;
-    text-align: center;
   }
 }
 
@@ -536,8 +515,6 @@ body {
   height: 100%;
   padding: 12px;
 }
-
-/* WHATSAPP FLOAT CODE ENDS */
 
 /* ============ FOOTER ============ */
 
@@ -564,7 +541,6 @@ body {
   width: 220px;
   display: block;
   margin-top: -35px;
-  /* slight up */
   margin-left: -60px;
 }
 
@@ -605,7 +581,6 @@ body {
   transform: scale(1.15);
 }
 
-/* ============ FOOTER ENDS ============ */
 /* =======FOOTER RESPONSIVENESS======= */
 /* Tablet and small laptop */
 @media (max-width: 1024px) {
@@ -663,5 +638,4 @@ body {
     width: 26px;
   }
 }
-
-/*======= FOOTER RESPONSIVENESS ENDS======= */
+/* FOOTER RESPONSIVENESS ENDS */ 

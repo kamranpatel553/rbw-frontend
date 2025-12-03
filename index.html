@@ -9,7 +9,7 @@
 
   <body>
     <!-- Transparent Navbar -->
-    <header class="navbar">
+    <!-- <header class="navbar"> -->
       <!-- Old static navbar commented out -->
       <!--
     <div class="logo">
@@ -28,27 +28,27 @@
       <a href="#contact" class="btn">Get Quote</a>
     </div>
     -->
+ <header>
+  <div id="navbar"></div>
+  <script>
+    fetch("navbar.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("navbar").innerHTML = data;
 
-      <div id="navbar"></div>
-      <script>
-        fetch("navbar.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("navbar").innerHTML = data;
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
 
-            // YAHI PE EVENT LISTENER LAGANA HAI
-            const hamburger = document.getElementById("hamburger");
-            const navLinks = document.getElementById("navLinks");
-
-            if (hamburger && navLinks) {
-              hamburger.addEventListener("click", () => {
-                navLinks.classList.toggle("open");
-                hamburger.classList.toggle("active");
-              });
-            }
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+            hamburger.classList.toggle("active");
           });
-      </script>
-    </header>
+        }
+      });
+  </script>
+</header>
+
 
     <main>
       <!-- Hero Section -->
