@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/contact-us.css" />
+  </head>
+  <body>
+    <!-- Transparent Navbar -->
+    <header class="navbar">
+      <!-- <div class="logo">
+      <img src="assets/images/logo/logo.png" alt="Roller Blinds Logo">
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="cta">
+      <a href="#contact" class="btn">Get Quote</a>
+    </div> -->
+      <div id="navbar"></div>
+      <script>
+        fetch("navbar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+
+            const hamburger = document.getElementById("hamburger");
+            const navLinks = document.getElementById("navLinks");
+
+            if (hamburger && navLinks) {
+              hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("open");
+                hamburger.classList.toggle("active");
+              });
+            }
+          });
+      </script>
+    </header>
+    <!-- CONTACT SECTION START -->
+    <section id="contact" class="contact-section-wrapper">
+      <div class="contact-us">
+        <h2>Contact Us</h2>
+        <p>
+          Have questions? Reach out and we’ll get back to you as soon as
+          possible.
+        </p>
+      </div>
+
+      <div class="contact-map-wrap">
+        <!-- LEFT: CONTACT FORM + INFO (NOW ON LEFT) -->
+        <div class="contact-form-box">
+          <div class="contact-form-header">
+            <h4>Get in touch</h4>
+            <h2>We’d love to hear from you</h2>
+            <p>Fill out the form and our team will connect with you shortly.</p>
+          </div>
+
+          <form class="contact-form-fields">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  class="form-control"
+                  placeholder="Enter your phone"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                class="form-textarea"
+                placeholder="Tell us how we can help"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+          </form>
+
+          <!-- CONTACT DETAILS + SOCIAL ICONS -->
+          <div class="contact-extra">
+            <div class="contact-details">
+              <div>
+                <span class="info-label">Call us</span>
+                <p class="info-value">+91 98765 43210</p>
+              </div>
+              <div>
+                <span class="info-label">Email</span>
+                <p class="info-value">info@example.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: MAP (NOW ON RIGHT) -->
+        <div class="map-box">
+          <div class="map-card">
+            <div class="map-embed">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3818.9374052182993!2d75.71297698226951!3d16.829461100000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDQ5JzQ1LjciTiA3NcKwNDInNTUuMCJF!5e0!3m2!1sen!2sin!4v1764595263751!5m2!1sen!2sin"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT SECTION END -->
+    <!-- Footer started -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo -->
+        <div class="footer-logo-section">
+          <img
+            src="assets/images/logo/logo.png"
+            class="footer-logo"
+            alt="Roller Blinds"
+          />
+        </div>
+
+        <!-- Product Category -->
+        <div class="footer-column">
+          <h4>Product Category</h4>
+          <a href="product.html#manual-cat">Motorized (with Remote)</a>
+          <a href="product.html#motorized-cat">Manual - Chain Operated</a>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="about-us.html">About Us</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="footer-column">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+                alt="IG"
+              />
+            </a>
+            <a href="#" class="social-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/124/124010.png"
+                alt="FB"
+              />
+            </a>
+            <a href="#" class="social-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2496/2496099.png"
+                alt="PT"
+              />
+            </a>
+            <a href="#" class="social-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                alt="YT"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- footer bottom -->
+
+    <footer>
+      <a
+        href="https://wa.me/917972155501?text=Hi%20I%20need%20help%20regarding%20your%20website"
+        class="whatsapp_float"
+        target="_blank"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+          class="whatsapp_icon"
+        />
+      </a>
+    </footer>
+  </body>
+</html>

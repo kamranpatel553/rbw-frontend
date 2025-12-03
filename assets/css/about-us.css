@@ -1,0 +1,130 @@
+:root {
+  --roller: #0b3a66;
+  --blinds: #5ec5e6;
+  --bg: #f9f9f9;
+  --text: #333;
+  --white: #fff;
+  --muted: #6b7280;
+  --transition: all 0.3s ease;
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 80px;
+  /* width: 100%; */
+  gap: 18px;
+  display: flex;
+  align-items: center;
+
+  z-index: 1000;
+  padding: 12px 28px;
+
+  /* justify-content: space-between; */
+  /* background: var(--white); */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.7)
+  );
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar img {
+  height: 150px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links {
+  flex: 1;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--roller);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.navbar a:hover {
+  color: var(--blinds);
+}
+
+.cta .btn {
+  border: 2px solid var(--roller);
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--roller);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cta .btn:hover {
+  background: var(--blinds);
+  border: 2px solid var(--blinds);
+  color: var(--white);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.about-clean {
+  padding: 80px 20px;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text h1 {
+  font-size: 44px;
+  color: var(--roller);
+  margin-bottom: 20px;
+  border-bottom: 3px solid var(--blinds);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.about-text p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.about-image img {
+  width: 85%;
+  align-items: end;
+  align-content: end;
+  align-self: flex-end;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.about-image img:hover {
+  transform: scale(1.02);
+}

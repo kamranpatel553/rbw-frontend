@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <link rel="stylesheet" href="assets/css/product-detail.css" />
+  </head>
+
+  <body>
+    <section class="product-page">
+      <!-- LEFT SECTION -->
+      <div class="left-section">
+        <div class="main-image-box">
+          <img
+            id="mainImage"
+            src="https://i.pinimg.com/474x/91/90/8d/91908d2991e12407d98a3886b200f883.jpg"
+            alt="Product"
+          />
+        </div>
+
+        <div class="thumbnail-row">
+          <img
+            src="https://i.pinimg.com/474x/91/90/8d/91908d2991e12407d98a3886b200f883.jpg"
+            onclick="changeImage(this.src)"
+          />
+          <img
+            src="https://i.pinimg.com/474x/91/90/8d/91908d2991e12407d98a3886b200f883.jpg"
+            onclick="changeImage(this.src)"
+          />
+          <img
+            src="https://blindskart.com/wp-content/uploads/2021/08/BK-ROLBO-D-001-300x400.jpg"
+            onclick="changeImage(this.src)"
+          />
+        </div>
+      </div>
+
+      <!-- RIGHT SECTION -->
+      <div class="right-section">
+        <h2>Bluish Grey Plain Translucent Roller Blind</h2>
+
+        <p class="price">From <strong>₹2125</strong> (inc. GST)</p>
+
+        <p class="rating">⭐⭐⭐⭐⭐ <span>(2 customer reviews)</span></p>
+
+        <p class="desc">
+          Select your desired width and height along with product add-ons to
+          calculate the final price.
+        </p>
+
+        <div class="input-box">
+          <label>WIDTH (MM)</label>
+          <input
+            type="number"
+            placeholder="Min 600 / Max 2400"
+            min="600"
+            max="2400"
+          />
+        </div>
+
+        <div class="input-box">
+          <label>HEIGHT (MM)</label>
+          <input
+            type="number"
+            placeholder="Min 800 / Max 3000"
+            min="800"
+            max="3000"
+          />
+        </div>
+
+        <button class="add-cart">Add to cart</button>
+      </div>
+    </section>
+
+    <script>
+      function changeImage(src) {
+        document.getElementById("mainImage").src = src;
+      }
+    </script>
+  </body>
+</html>

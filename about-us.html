@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Interior Company</title>
+    <link rel="stylesheet" href="assets/css/about-us.css" />
+  </head>
+  <body>
+    <!-- <header class="navbar">
+    <div class="logo">
+      <img src="assets/images/logo/logo.png" alt="Roller Blinds Logo">
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="cta">
+      <a href="#contact" class="btn">Get Quote</a>
+    </div>
+  </header> -->
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+
+          const hamburger = document.getElementById("hamburger");
+          const navLinks = document.getElementById("navLinks");
+
+          if (hamburger && navLinks) {
+            hamburger.addEventListener("click", () => {
+              navLinks.classList.toggle("open");
+              hamburger.classList.toggle("active");
+            });
+          }
+        });
+    </script>
+
+    <section class="about-clean">
+      <div class="about-container">
+        <div class="about-text">
+          <h1>About us</h1>
+          <p>
+            With more than 20 years of expertise, we bring you a refined
+            collection of premium roller blinds crafted for modern living. Over
+            the last two decades, our focus has remained simple — deliver
+            exceptional blinds that elevate homes with elegance and lasting
+            quality.
+            <br /><br />
+            Our range includes blackout, sunscreen, day & night, and motorized
+            blinds, each curated with precision, durability, and comfort in
+            mind. As specialists in roller blinds, we ensure premium materials,
+            modern functionality, and smooth installation for every customer.
+            <br /><br />
+            Experience craftsmanship, style, and two decades of trusted service
+            — all in one place.
+          </p>
+          <h1>USP</h1>
+          <p>
+            1.Wide Range of Fabrics & Colours : Choose from blackout,
+            translucent, sunscreen, and designer textures to match any interior.
+            <br />
+            2.Fast Delivery Across India : Ready-made and custom-size blinds
+            shipped quickly with reliable packaging.
+            <br />
+            3.Custom Sizes Available : Order blinds made exactly to your window
+            size for a perfect fit.
+            <br />
+          </p>
+        </div>
+
+        <div class="about-image">
+          <img
+            src="https://upperhunterblinds.com.au/wp-content/uploads/2023/04/roller_blinds-1.jpg"
+            alt="Installation Image"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

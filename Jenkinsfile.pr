@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Run Sanity Checks') {
+            steps {
+                sh '''
+                    echo "Running Sanity Tests..."
+                    npx prettier --check .
+                    npx eslint **/*.js || true
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'PR Sanity Passed'
+        }
+        failure {
+            echo 'PR Sanity Failed'
+        }
+    }
+}

@@ -1,0 +1,69 @@
+pipeline {
+    agent any
+
+    environment {
+        APP_NAME        = "rbw-frontend"
+        CAPROVER_HOST   = "https://captain.apps.viiibits.com"
+        REPO_URL        = "https://git.apps.viiibits.com/roller-blinds/rbw-frontend.git"
+        CREDENTIALS_ID  = "GITEA_REPO_CRED"
+    }
+
+    stages {
+
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main',
+                    url: env.REPO_URL,
+                    credentialsId: env.CREDENTIALS_ID
+            }
+        }
+
+        stage('Prepare Tarball') {
+            steps {
+                sh '''
+                    rm -f deploy.tar
+                    tar -cf deploy.tar *
+                    echo "Tarball created: deploy.tar"
+                '''
+            }
+        }
+
+        stage('Deploy to CapRover') {
+            steps {
+                withCredentials([string(credentialsId: 'CAPROVER_PASSWORD', variable: 'CAP_PASS')]) {
+                    sh '''
+                        echo "Deploying to CapRover..."
+
+                        export CAPROVER_PASSWORD="$CAP_PASS"
+
+                        npx caprover deploy \
+                            --host https://captain.apps.viiibits.com \
+                            --appName rbw-frontend \
+                            --tarFile deploy.tar
+
+                        echo "Deployment triggered."
+                    '''
+                }
+            }
+        }
+
+        stage('Health Check') {
+            steps {
+                sh '''
+                    echo "Checking production health..."
+                    curl -f https://rbw-frontend.apps.viiibits.com/ >/dev/null
+                    echo "Health check passed!"
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "CD deployment completed successfully!"
+        }
+        failure {
+            echo "CD deployment failed!"
+        }
+    }
+}
