@@ -11,7 +11,7 @@
 <body>
   <!-- Transparent Navbar -->
   <!-- <header class="navbar"> -->
-    <!-- <div class="logo">
+  <!-- <div class="logo">
       <img src="assets/images/logo/logo.png" alt="Roller Blinds Logo">
     </div>
     <nav class="nav-links">
@@ -26,26 +26,26 @@
     <div class="cta">
       <a href="#contact" class="btn">Get Quote</a>
     </div> -->
-        <header>
-          <div id="navbar"></div>
+  <header>
+    <div id="navbar"></div>
     <script>
-        fetch("navbar.html")
-            .then((response) => response.text())
-            .then((data) => {
-                document.getElementById("navbar").innerHTML = data;
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
 
-                const hamburger = document.getElementById("hamburger");
-                const navLinks = document.getElementById("navLinks");
+          const hamburger = document.getElementById("hamburger");
+          const navLinks = document.getElementById("navLinks");
 
-                if (hamburger && navLinks) {
-                    hamburger.addEventListener("click", () => {
-                        navLinks.classList.toggle("open");
-                        hamburger.classList.toggle("active");
-                    });
-                }
+          if (hamburger && navLinks) {
+            hamburger.addEventListener("click", () => {
+              navLinks.classList.toggle("open");
+              hamburger.classList.toggle("active");
             });
+          }
+        });
     </script>
-    </header>
+  </header>
   <!-- CONTACT SECTION START -->
   <section id="contact" class="contact-section-wrapper">
     <div class="contact-us">
@@ -138,8 +138,10 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p><strong>Blackout:</strong> Blocks all light — best for bedrooms and media rooms.</p>
-              <p><strong>Sunscreen:</strong> Filters sunlight — ideal for living rooms & offices.</p>
+              <p><strong>Blackout:</strong> Blocks virtually all light, giving full privacy and darkness — ideal for
+                bedrooms or media rooms. </p>
+              <p><strong>Sunscreen:</strong>Lets natural light in while reducing glare and offering moderate privacy —
+                good for living rooms, offices, and spaces where you want light without harsh sun</p>
             </div>
           </article>
 
@@ -150,7 +152,9 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Just wipe with damp cloth or use mild detergent for PVC/Vinyl fabrics.</p>
+              <p>Regular maintenance is easy: simply dust or wipe with a soft, damp cloth. For fabrics like PVC or
+                vinyl, you can use a mild detergent. Avoid harsh chemicals or abrasive tools to maintain fabric
+                integrity</p>
             </div>
           </article>
 
@@ -161,7 +165,8 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes — commercial, offices, and all large quantity orders accepted.</p>
+              <p>Absolutely. Whether it’s a single window or an entire office complex, we handle both retail and bulk
+                orders with equal attention to quality and delivery timelines.</p>
             </div>
           </article>
 
@@ -172,7 +177,8 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes — moisture-resistant blinds perfect for wet areas like kitchens & bathrooms.</p>
+              <p>Yes. We have moisture-resistant / waterproof fabric options like PVC or vinyl, which work well in humid
+                or wet areas such as bathrooms and kitchens.</p>
             </div>
           </article>
 
@@ -245,11 +251,7 @@
                 </table>
               </div>
 
-<<<<<<< HEAD
-            
-=======
-              
->>>>>>> 09f5cbbb1379cf2694bf24e4d663dade1ff3af89
+             
             </div>
           </article>
 
