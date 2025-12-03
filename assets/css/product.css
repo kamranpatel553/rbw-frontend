@@ -20,7 +20,7 @@
 body {
   background: var(--bg);
   color: var(--text);
-  padding-top: 80px; /* fixed navbar ke niche content */
+  padding-top: 80px; /* keep content below fixed navbar  */
 }
 
 /* ======= NAVBAR (COMMON) ========= */

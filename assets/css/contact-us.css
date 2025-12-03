@@ -443,8 +443,7 @@ body {
   color: var(--muted);
 }
 
-/* yahan footer ke .social-links se clash na ho,
-   isliye sirf contact section ke andar wale ko target kar rahe hain */
+
 .contact-socials .social-links {
   display: flex;
   gap: 8px;
