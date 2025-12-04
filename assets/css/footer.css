@@ -92,7 +92,7 @@
 
 /* ========== RESPONSIVE ========== */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .footer {
     padding: 18px 16px 20px;
   }
