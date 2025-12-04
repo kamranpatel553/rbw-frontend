@@ -1,5 +1,3 @@
-/* ========= FOOTER ========= */
-
 :root {
   --roller: #0b3a66;
   --blinds: #5ec5e6;
@@ -10,15 +8,13 @@
   --transition: all 0.3s ease;
 }
 
-
 .footer {
   background: #ffffff;
   padding: 16px 28px 20px;
   border-top: 1px solid #e5e7eb;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.08);
 }
 
-/* Layout */
 .footer-container {
   width: 100%;
   margin-top: 10px;
@@ -28,7 +24,6 @@
   gap: 60px;
 }
 
-/* Logo */
 .footer-logo-section {
   flex-shrink: 0;
 }
@@ -39,7 +34,6 @@
   display: block;
 }
 
-/* Columns */
 .footer-column {
   min-width: 160px;
 }
@@ -84,8 +78,7 @@
   transform: scale(1.15);
 }
 
-/* ========== RESPONSIVE ========== */
-
+/* Responsive */
 @media (max-width: 900px) {
   .footer {
     padding: 18px 16px 20px;
@@ -112,7 +105,8 @@
     height: 24px;
   }
 }
-/* ======== WHATSAPP FLOAT BUTTON============= */
+
+/* WhatsApp floating button */
 .whatsapp_float {
   position: fixed;
   width: 60px;

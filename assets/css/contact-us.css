@@ -14,16 +14,17 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-
 }
 
 body {
   background: var(--bg);
   color: var(--text);
-  padding-top: 80px;
+  padding-top: 80px; /* space for fixed navbar */
 }
 
-/* ========== NAVBAR (COMMON – SAME AS style.css / product.css) ========== */
+/* =========================
+   NAVBAR (if needed here)
+   ========================= */
 .navbar {
   position: fixed;
   left: 0;
@@ -61,8 +62,6 @@ body {
   gap: 25px;
   align-items: center;
   justify-content: flex-end;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar a {
@@ -146,15 +145,13 @@ body {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Get Quote (inside menu) – default hidden on desktop */
+/* Mobile Get Quote */
 .mobile-cta {
   display: none;
 }
 
 /* ===== NAVBAR RESPONSIVE (HAMBURGER) – 900px ===== */
 @media (max-width: 900px) {
- 
-
   .hamburger {
     display: flex;
     z-index: 1200;
@@ -166,7 +163,7 @@ body {
 
   .nav-links {
     position: absolute;
-    top: 80px; /* navbar height */
+    top: 80px;
     left: 0;
     right: 0;
     background: #ffffff;
@@ -202,6 +199,7 @@ body {
     width: 100%;
     text-align: center;
   }
+
   .navbar img {
     height: 110px;
   }
@@ -215,7 +213,6 @@ body {
   padding: 20px 0 80px;
 }
 
-/* CONTACT-US HEADING */
 .contact-us {
   text-align: center;
   margin: 40px auto 32px;
@@ -243,7 +240,7 @@ body {
   }
 }
 
-/* CONTACT + MAP WRAP – DESKTOP: side-by-side, equal height */
+/* CONTACT + MAP WRAP */
 .contact-map-wrap {
   max-width: 1150px;
   margin: 0 auto;
@@ -253,14 +250,12 @@ body {
   align-items: stretch;
 }
 
-/* BOTH columns */
 .map-box,
 .contact-form-box {
   flex: 1;
   min-height: 440px;
 }
 
-/* MAP column slightly wider look */
 .map-box {
   flex: 1.05;
   border-radius: 20px;
@@ -269,9 +264,8 @@ body {
   box-shadow: 0 18px 35px rgba(15, 23, 42, 0.05);
 }
 
-/* MAP CARD */
 .map-card {
-  padding: 0px;
+  padding: 0;
   border-radius: 20px;
   width: 100%;
   display: flex;
@@ -299,10 +293,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: left;
-}
-
-.contact-form-header {
   text-align: left;
 }
 
@@ -396,7 +386,7 @@ body {
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
 }
 
-/* BOTTOM: CONTACT DETAILS + SOCIAL ICONS */
+/* CONTACT EXTRA */
 .contact-extra {
   margin-top: 22px;
   display: flex;
@@ -407,7 +397,6 @@ body {
   text-align: left;
 }
 
-/* Text info */
 .contact-details {
   display: flex;
   flex-wrap: wrap;
@@ -431,78 +420,14 @@ body {
   color: var(--roller);
 }
 
-/* SOCIAL ICONS AREA */
-.contact-socials {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
-}
-
-.social-label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--muted);
-}
-
-
-.contact-socials .social-links {
-  display: flex;
-  gap: 8px;
-}
-
-/* Common social button style */
-.social-link {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-decoration: none;
-  background: #eef2ff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease,
-    background 0.2s ease;
-}
-
-.social-link svg {
-  width: 20px;
-  height: 20px;
-}
-
-.social-link:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
-  border-color: transparent;
-}
-
-.social-link--instagram:hover,
-.social-link--twitter:hover,
-.social-link--linkedin:hover {
-  background: transparent;
-}
-
-.social-link--gmail:hover {
-  background: #fff;
-}
-
 /* =========================
-   RESPONSIVE – CONTACT PAGE
+   RESPONSIVE – CONTACT
    ========================= */
-
 @media (max-width: 900px) {
   .contact-map-wrap {
     flex-direction: column;
     margin-top: 10px;
   }
-
-  
 
   .contact-form-box {
     padding: 24px 22px;
@@ -529,40 +454,11 @@ body {
 
   .contact-extra {
     align-items: flex-start;
-    margin-top: 22px;
-    display: flex;
-    align-items: flex-start;
     justify-content: flex-start;
     gap: 30px;
-    flex-wrap: wrap;
-    text-align: left;
-  }
-
-  .contact-socials {
-    width: 100%;
-  }
-
-  .contact-socials .social-links {
-    gap: 10px;
   }
 }
 
-@media (max-width: 900px) {
-  .contact-map-wrap {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  .contact-form-box {
-    padding: 24px 22px;
-  }
-
-  .contact-form-header h2 {
-    font-size: 24px;
-  }
-}
-
-/* FAQs starts*/
 /* ===== FAQ SECTION ===== */
 
 .faq-block {
@@ -611,10 +507,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color:#333;
+  color: #333;
   transition: var(--transition);
 }
-
 
 .faq-icon {
   width: 28px;
@@ -639,7 +534,7 @@ body {
   opacity: 0;
   overflow: hidden;
   font-size: 15px;
-  padding: 0 0;
+  padding: 0;
   color: var(--muted);
   transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
@@ -650,8 +545,7 @@ body {
   padding: 0 0 20px;
 }
 
-/* Table */
-/* Simple Comparison Table */
+/* Comparison Table */
 .faq-table-box {
   margin: 10px 0;
   border-radius: 6px;
@@ -666,7 +560,7 @@ body {
   border-collapse: collapse;
 }
 
-.faq-table-box th, 
+.faq-table-box th,
 .faq-table-box td {
   padding: 10px 12px;
   border: 1px solid #e1e1e1;
@@ -684,17 +578,13 @@ body {
   background: #ffffff;
 }
 
-
 .faq-table-box tr:nth-child(even) {
   background: #eefaff;
 }
 
-/* Mobile */
 @media (max-width: 600px) {
   .faq-title {
     font-size: 24px;
     text-align: center;
   }
 }
-
-/* FAQS ends */

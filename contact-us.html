@@ -4,49 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Contact Us | Roller Blinds</title>
+
+  <!-- Page styles -->
   <link rel="stylesheet" href="assets/css/contact-us.css" />
-  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/footer.css" />
 </head>
 
 <body>
-  <!-- Transparent Navbar -->
-  <!-- <header class="navbar"> -->
-  <!-- <div class="logo">
-      <img src="assets/images/logo/logo.png" alt="Roller Blinds Logo">
-    </div>
-    <nav class="nav-links">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="about-us.html">About us</a></li>
-        <li><a href="product.html">Products</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="cta">
-      <a href="#contact" class="btn">Get Quote</a>
-    </div> -->
+  <!-- NAVBAR (loaded via navbar.html) -->
   <header>
     <div id="navbar"></div>
-    <script>
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar").innerHTML = data;
-
-          const hamburger = document.getElementById("hamburger");
-          const navLinks = document.getElementById("navLinks");
-
-          if (hamburger && navLinks) {
-            hamburger.addEventListener("click", () => {
-              navLinks.classList.toggle("open");
-              hamburger.classList.toggle("active");
-            });
-          }
-        });
-    </script>
   </header>
+
   <!-- CONTACT SECTION START -->
   <section id="contact" class="contact-section-wrapper">
     <div class="contact-us">
@@ -58,7 +28,7 @@
     </div>
 
     <div class="contact-map-wrap">
-      <!-- LEFT: CONTACT FORM + INFO (NOW ON LEFT) -->
+      <!-- LEFT: CONTACT FORM -->
       <div class="contact-form-box">
         <div class="contact-form-header">
           <h4>Get in touch</h4>
@@ -66,7 +36,7 @@
           <p>Fill out the form and our team will connect with you shortly.</p>
         </div>
 
-        <form class="contact-form-fields">
+        <form class="contact-form-fields" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -91,7 +61,7 @@
           <button type="submit" class="btn-submit">Send Message</button>
         </form>
 
-        <!-- CONTACT DETAILS + SOCIAL ICONS -->
+        <!-- CONTACT DETAILS -->
         <div class="contact-extra">
           <div class="contact-details">
             <div>
@@ -106,13 +76,15 @@
         </div>
       </div>
 
-      <!-- (NOW ON RIGHT) -->
+      <!-- RIGHT: MAP -->
       <div class="map-box">
         <div class="map-card">
           <div class="map-embed">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3818.9374052182993!2d75.71297698226951!3d16.829461100000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDQ5JzQ1LjciTiA3NcKwNDInNTUuMCJF!5e0!3m2!1sen!2sin!4v1764595263751!5m2!1sen!2sin"
-              referrerpolicy="no-referrer-when-downgrade">
+              referrerpolicy="no-referrer-when-downgrade"
+              loading="lazy"
+              allowfullscreen>
             </iframe>
           </div>
         </div>
@@ -121,17 +93,13 @@
   </section>
   <!-- CONTACT SECTION END -->
 
-  <!-- FAQs Starts here -->
-  <!-- ========== FAQ SECTION START ========== -->
+  <!-- FAQ SECTION START -->
   <section class="faq-block">
     <div class="contact-map-wrap faq-container">
-
       <div class="faq-inner">
-
         <h2 class="faq-title">Frequently Asked Questions</h2>
 
         <div class="faq-accordion">
-
           <!-- Q1 -->
           <article class="faq-item">
             <button class="faq-question">
@@ -141,8 +109,8 @@
             <div class="faq-answer">
               <p><strong>Blackout:</strong> Blocks virtually all light, giving full privacy and darkness — ideal for
                 bedrooms or media rooms. </p>
-              <p><strong>Sunscreen:</strong>Lets natural light in while reducing glare and offering moderate privacy —
-                good for living rooms, offices, and spaces where you want light without harsh sun</p>
+              <p><strong>Sunscreen:</strong> Lets natural light in while reducing glare and offering moderate privacy —
+                good for living rooms, offices, and spaces where you want light without harsh sun.</p>
             </div>
           </article>
 
@@ -155,7 +123,7 @@
             <div class="faq-answer">
               <p>Regular maintenance is easy: simply dust or wipe with a soft, damp cloth. For fabrics like PVC or
                 vinyl, you can use a mild detergent. Avoid harsh chemicals or abrasive tools to maintain fabric
-                integrity</p>
+                integrity.</p>
             </div>
           </article>
 
@@ -183,7 +151,7 @@
             </div>
           </article>
 
-          <!-- Q5 (Comparison) -->
+          <!-- Q5 -->
           <article class="faq-item">
             <button class="faq-question">
               <span>Which is better – Curtains or Roller Blinds?</span>
@@ -248,23 +216,95 @@
                       <td>Quick and simple installation</td>
                     </tr>
                   </tbody>
-
                 </table>
               </div>
-
-             
             </div>
           </article>
-
         </div>
       </div>
-
     </div>
   </section>
-  <!-- ========== FAQ SECTION END ========== -->
+  <!-- FAQ SECTION END -->
 
+  <!-- FOOTER START -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo -->
+      <div class="footer-logo-section">
+        <img src="assets/images/logo/logo.png" class="footer-logo" alt="Roller Blinds" />
+      </div>
 
+      <!-- Product Category -->
+      <div class="footer-column">
+        <h4>Product Category</h4>
+        <a href="product.html#manual-cat">Motorized (with Remote)</a>
+        <a href="product.html#motorized-cat">Manual - Chain Operated</a>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-column">
+        <h4>Company</h4>
+        <a href="about-us.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="before-after.html">Our Works</a>
+      </div>
+
+      <!-- Follow Us -->
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" class="social-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/2496/2496099.png" alt="Pinterest" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- FOOTER END -->
+
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <a
+    href="https://wa.me/919876543210?text=Hi%20I%20need%20help%20regarding%20your%20website"
+    class="whatsapp_float"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      class="whatsapp_icon"
+      alt="WhatsApp"
+    />
+  </a>
+
+  <!-- SCRIPTS -->
   <script>
+    // Load navbar HTML
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+            hamburger.classList.toggle("active");
+          });
+        }
+      });
+
+    // FAQ accordion
     const faqItems = document.querySelectorAll(".faq-item");
 
     faqItems.forEach(item => {
@@ -284,68 +324,6 @@
       });
     });
   </script>
-
-  <!-- JS of FAQs Ends -->
-
-  <!-- Footer started -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Logo -->
-      <div class="footer-logo-section">
-        <img src="assets/images/logo/logo.png" class="footer-logo" alt="Roller Blinds" />
-      </div>
-
-      <!-- Product Category -->
-      <div class="footer-column">
-        <h4>Product Category</h4>
-        <a href="product.html#manual-cat">Motorized (with Remote)</a>
-        <a href="product.html#motorized-cat">Manual - Chain Operated</a>
-      </div>
-
-      <!-- Company -->
-    <div class="footer-column">
-          <h4>Company</h4>
-          <a href="about-us.html">About Us</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="before-after.html">Our Works</a>
-        </div>
-
-      <!-- Follow Us -->
-      <div class="footer-column">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#" class="social-icon">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="IG" />
-          </a>
-          <a href="#" class="social-icon">
-            <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="FB" />
-          </a>
-          <a href="#" class="social-icon">
-            <img src="https://cdn-icons-png.flaticon.com/512/2496/2496099.png" alt="PT" />
-          </a>
-          <a href="#" class="social-icon">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YT" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- footer bottom -->
-
-  <!-- WhatsApp Floating Button -->
-    <a
-      href="https://wa.me/919876543210?text=Hi%20I%20need%20help%20regarding%20your%20website"
-      class="whatsapp_float"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-        class="whatsapp_icon"
-        alt="WhatsApp"
-      />
-    </a>
 </body>
 
 </html>

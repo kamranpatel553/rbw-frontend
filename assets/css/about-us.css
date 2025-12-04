@@ -9,12 +9,19 @@
   --transition: all 0.3s ease;
 }
 
+
+main, .about-clean, .contact-section-wrapper {
+  flex: 1;
+}
 /* =============== PAGE BASE STYLES =============== */
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Section wrapper (About) */
