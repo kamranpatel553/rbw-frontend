@@ -201,6 +201,9 @@ body {
     width: 100%;
     text-align: center;
   }
+  .navbar img {
+    height: 110px;
+  }
 }
 
 /* ========== ROLLER BLINDS HEADING ========== */
