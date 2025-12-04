@@ -9,38 +9,25 @@
 </head>
 <body>
 
-  <div id="navbar"></div>
-    <script>
-  fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
-    });
-</script>
+   <div id="navbar"></div>
+  <script>
+    fetch("navbar.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("navbar").innerHTML = data;
 
- <header>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery</title>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
 
-  <!-- Gallery CSS -->
-  <link rel="stylesheet" href="gallery.css">
-  <link rel="stylesheet" href="navbar.css">
-  
-</head>
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+            hamburger.classList.toggle("active");
+          });
+        }
+      });
+  </script>
 
-<body>
-  <div id="navbar"></div>
-    <script>
-  fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
-    });
-</script>
 
   <header class="gallery-header">
     <h1>Our Gallery</h1>
