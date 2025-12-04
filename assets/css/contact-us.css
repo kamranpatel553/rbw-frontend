@@ -502,10 +502,7 @@ body {
     margin-top: 10px;
   }
 
-  .map-box,
-  .contact-form-box {
-    min-height: 380px;
-  }
+  
 
   .contact-form-box {
     padding: 24px 22px;
