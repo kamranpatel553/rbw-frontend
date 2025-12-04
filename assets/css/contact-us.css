@@ -547,6 +547,20 @@ body {
   }
 }
 
+@media (max-width: 900px) {
+  .contact-map-wrap {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .contact-form-box {
+    padding: 24px 22px;
+  }
+
+  .contact-form-header h2 {
+    font-size: 24px;
+  }
+}
 
 /* FAQs starts*/
 /* ===== FAQ SECTION ===== */
