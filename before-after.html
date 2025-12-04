@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Before & After Split Slider</title>
+    <link rel="stylesheet" href="/assets/css/before-after.css" />
+    <link rel="stylesheet" href="/assets/css/navbar.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css">
+ 
+</head>
+<body>
+    <div id="navbar"></div>
+  <script>
+    fetch("navbar.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("navbar").innerHTML = data;
+
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+            hamburger.classList.toggle("active");
+          });
+        }
+      });
+      
+  </script>
+  <script src="/assets/js/before-after.js"></script>
+  <header>
+ <div class="container">
+    <h1>Our Works</h1>
+
+    <div class="works-grid">
+
+      <!-- Work Item 1 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider1">
+          <img src="https://i.pinimg.com/1200x/4c/c2/40/4cc240b7e8fb8d8c9297d7500e243624.jpg" alt="Before" class="before-image">
+          <img src="https://i.pinimg.com/1200x/e8/7e/61/e87e6147b0e5e8d1081772265bf07823.jpg" alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Renovation in the balcony</div>
+      </div>
+
+      <!-- Work Item 2 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider2">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Before" class="before-image">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Kitchen Remodeling</div>
+      </div>
+
+      <!-- Work Item 3 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider3">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Before" class="before-image">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Living Room Transformation</div>
+      </div>
+<div class="work-item">
+        <div class="slider-container" id="slider1">
+          <img src="https://i.pinimg.com/1200x/4c/c2/40/4cc240b7e8fb8d8c9297d7500e243624.jpg" alt="Before" class="before-image">
+          <img src="https://i.pinimg.com/1200x/e8/7e/61/e87e6147b0e5e8d1081772265bf07823.jpg" alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Renovation in the balcony</div>
+      </div>
+
+      <!-- Work Item 2 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider2">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Before" class="before-image">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Kitchen Remodeling</div>
+      </div>
+
+      <!-- Work Item 3 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider3">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Before" class="before-image">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Living Room Transformation</div>
+      </div>
+<div class="work-item">
+        <div class="slider-container" id="slider1">
+          <img src="https://i.pinimg.com/1200x/4c/c2/40/4cc240b7e8fb8d8c9297d7500e243624.jpg" alt="Before" class="before-image">
+          <img src="https://i.pinimg.com/1200x/e8/7e/61/e87e6147b0e5e8d1081772265bf07823.jpg" alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Renovation in the balcony</div>
+      </div>
+
+      <!-- Work Item 2 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider2">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Before" class="before-image">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Kitchen Remodeling</div>
+      </div>
+
+      <!-- Work Item 3 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider3">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Before" class="before-image">
+          <img src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Living Room Transformation</div>
+      </div>
+
+    </div>
+  </div>
+  </header>
+   <!-- Footer started -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo -->
+        <div class="footer-logo-section">
+          <img
+            src="assets/images/logo/logo.png"
+            class="footer-logo"
+            alt="Roller Blinds"
+          />
+        </div>
+
+        <!-- Product Category -->
+        <div class="footer-column">
+          <h4>Product Category</h4>
+          <a href="product.html#manual-cat">Motorized (with Remote)</a>
+          <a href="product.html#motorized-cat">Manual - Chain Operated</a>
+        </div>
+
+        <!-- Company -->
+     <div class="footer-column">
+          <h4>Company</h4>
+          <a href="about-us.html">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="before-after.html">Our Works</a>
+        </div>
+        
+
+        <!-- Follow Us -->
+        <div class="footer-column">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+                alt="IG"
+              />
+            </a>
+            <a href="#" class="social-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/124/124010.png"
+                alt="FB"
+              />
+            </a>
+            <a href="#" class="social-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2496/2496099.png"
+                alt="PT"
+              />
+            </a>
+            <a href="#" class="social-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                alt="YT"
+              />
+            </a>
+          </div>
+        </div>
+      </div>  
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/919876543210?text=Hi%20I%20need%20help%20regarding%20your%20website"
+      class="whatsapp_float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        class="whatsapp_icon"
+        alt="WhatsApp"
+      />
+    </a>
+ 
+</body>
+
+</html>

@@ -8,6 +8,17 @@
   --transition: all 0.3s ease;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  padding-top: 80px; /* To prevent content being hidden under fixed navbar */
+}
+
 /* ======= NAVBAR (COMMON) ========= */
 .navbar {
   position: fixed;
@@ -129,50 +140,6 @@
 }
 
 /* ===== NAVBAR RESPONSIVE (COMMON) ===== */
-.about-clean {
-  padding: 80px 20px;
-}
-
-.about-container {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.about-text h1 {
-  font-size: 44px;
-  color: var(--roller);
-  margin-bottom: 20px;
-  border-bottom: 3px solid var(--blinds);
-  display: inline-block;
-  padding-bottom: 6px;
-}
-
-.about-text p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: var(--text);
-}
-
-.about-image img {
-  width: 85%;
-  align-items: end;
-  align-content: end;
-  align-self: flex-end;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: var(--transition);
-  
-}
-
-.about-image img:hover {
-  transform: scale(1.02);
-}
-
-/* ===== NAVBAR RESPONSIVE (COMMON) ===== */
 @media (max-width: 900px) {
   .hamburger {
     display: flex;
@@ -219,6 +186,95 @@
     display: block;
     width: 100%;
     text-align: center;
+  }
+}
+
+/* ===== NAVBAR RESPONSIVE (COMMON) ===== */
+/* PAGE HEADER */
+.gallery-header {
+  background: var(--roller);
+  padding: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.gallery-header h1 {
+  color: var(--white);
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+
+/* GALLERY GRID */
+.gallery-container {
+  column-count: 3;
+  column-gap: 10px;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 10px;
+}
+
+
+.gallery-item {
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: var(--transition);
+}
+
+
+.gallery-item img {
+  width: 100%;
+  height: auto;        /* Adjusts height automatically */
+  display: block;
+  object-fit: cover;   /* Prevents stretching */
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+
+/* LIGHTBOX */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  width: 90%;
+  max-width: 700px;
+  border-radius: 10px;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: var(--white);
+  font-size: 40px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  #closeBtn {
+    right: 20px;
+    font-size: 32px;
   }
 }
 
