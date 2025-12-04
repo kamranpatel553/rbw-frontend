@@ -201,6 +201,9 @@ body {
     width: 100%;
     text-align: center;
   }
+  .navbar img {
+    height: 110px;
+  }
 }
 
 /* ========== ROLLER BLINDS HEADING ========== */
@@ -630,5 +633,9 @@ body {
     width: 26px;
   }
 }
+<<<<<<< HEAD
 
 /* FOOTER RESPONSIVENESS ENDS */ 
+=======
+/* FOOTER RESPONSIVENESS ENDS */ 
+>>>>>>> 0597d2d9101497c81b53134fe8757a3f11b9a01d
