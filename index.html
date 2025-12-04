@@ -1,19 +1,20 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roller Blinds</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/footer.css">
 
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roller Blinds</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/footer.css">
 
-  <body>
-    <!-- Transparent Navbar -->
-    <!-- <header class="navbar"> -->
-      <!-- Old static navbar commented out -->
-      <!--
+</head>
+
+<body>
+  <!-- Transparent Navbar -->
+  <!-- <header class="navbar"> -->
+  <!-- Old static navbar commented out -->
+  <!--
     <div class="logo">
       <img src="assets/images/logo/logo.png" alt="Roller Blinds Logo" />
     </div>
@@ -30,42 +31,43 @@
       <a href="#contact" class="btn">Get Quote</a>
     </div>
     -->
- <header>
-  <div id="navbar"></div>
-  <script>
-    fetch("navbar.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("navbar").innerHTML = data;
+  <header>
+    <div id="navbar"></div>
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
 
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("navLinks");
+          const hamburger = document.getElementById("hamburger");
+          const navLinks = document.getElementById("navLinks");
 
-        if (hamburger && navLinks) {
-          hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("open");
-            hamburger.classList.toggle("active");
-          });
-        }
-      });
-  </script>
-</header>
+          if (hamburger && navLinks) {
+            hamburger.addEventListener("click", () => {
+              navLinks.classList.toggle("open");
+              hamburger.classList.toggle("active");
+            });
+          }
+        });
+    </script>
+  </header>
 
 
-    <main>
-      <!-- Hero Section -->
-      <section id="home" class="hero">
+  <main>
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+
+    <section class="hero">
+      <section id="home">
         <div class="hero-content">
-          <h1>Stylish Roller Blinds <br />for Every Space</h1>
-          <br />
-          <p>
-            We offer an extensive range of roller blinds designed to complement
-            any interior. Whether you’re looking for blackout blinds for your
-            bedroom, sunscreen blinds for your living room, or motorized blinds
-            for your office — we’ve got you covered. All our products are made
-            from durable materials and come with professional installation
-            support to ensure a perfect fit every time.
-          </p>
+          <h1>Stylish Roller Blinds <br> for Every Space </h1>
+          <br>
+          <p>We offer an extensive range of roller blinds designed to complement any interior.
+            Whether you’re looking for blackout blinds for your bedroom, sunscreen blinds for your living room,
+            or motorized blinds for your office — we’ve got you covered.
+
+            All our products are made from durable materials and come with professional installation support to
+            ensure a perfect fit every time.</p>
 
           <div class="btn-group">
             <a href="#products" class="outline-btn">Explore Catalog</a>
@@ -73,311 +75,277 @@
             <a href="#" class="outline-btn">Get Quotation</a>
           </div>
         </div>
-      </section>
-
-      <!-- Features Section -->
-      <section class="features-section" id="products">
-        <h2 class="section-title">Roller Blinds Features</h2>
-
-        <div class="features-container">
-          <!-- 1. UV Protection -->
-          <div class="feature-card">
-            <div class="icon-box">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#0b3a66"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="4" />
-                <line x1="12" y1="2" x2="12" y2="5" />
-                <line x1="12" y1="19" x2="12" y2="22" />
-                <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
-                <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
-                <line x1="2" y1="12" x2="5" y2="12" />
-                <line x1="19" y1="12" x2="22" y2="12" />
-                <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
-                <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
-              </svg>
-            </div>
-            <h3>UV Protection</h3>
-            <p>
-              Blocks harsh sunlight and harmful UV rays while keeping your
-              interiors cool.
-            </p>
-          </div>
-
-          <!-- 2. Motorized Operation -->
-          <div class="feature-card">
-            <div class="icon-box">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#0b3a66"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="7" y="2" width="10" height="20" rx="4" />
-                <circle cx="12" cy="17" r="1.5" />
-                <line x1="12" y1="7" x2="12" y2="11" />
-              </svg>
-            </div>
-            <h3>Motorized Operation</h3>
-            <p>
-              Control your blinds with a remote or smart home integration for
-              convenience.
-            </p>
-          </div>
-
-          <!-- 3. Heat Reduction -->
-          <div class="feature-card">
-            <div class="icon-box">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#0b3a66"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2z" />
-                <line x1="12" y1="13" x2="12" y2="17" />
-                <circle cx="12" cy="18" r="1" />
-              </svg>
-            </div>
-            <h3>Heat Reduction</h3>
-            <p>
-              Reduces indoor heat and maintains a comfortable room temperature.
-            </p>
-          </div>
-
-          <!-- 4. Noise Reduction -->
-          <div class="feature-card">
-            <div class="icon-box">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#0b3a66"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polygon points="5 9 9 9 13 5 13 19 9 15 5 15" />
-                <path d="M17 9a3 3 0 0 1 0 6" />
-                <path d="M19 7a6 6 0 0 1 0 10" />
-              </svg>
-            </div>
-            <h3>Noise Reduction</h3>
-            <p>Minimizes outside noise using thick, premium fabric layers.</p>
-          </div>
-
-          <!-- 5. Premium Fabric Quality -->
-          <div class="feature-card">
-            <div class="icon-box">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#0b3a66"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="4" y="4" width="16" height="6" rx="1" />
-                <rect x="4" y="10" width="16" height="6" rx="1" />
-                <rect x="4" y="16" width="16" height="4" rx="1" />
-              </svg>
-            </div>
-            <h3>Premium Fabric Quality</h3>
-            <p>
-              High-quality fabrics with blackout, sunscreen, and designer
-              textures.
-            </p>
-          </div>
-
-          <!-- 6. Waterproof Material -->
-          <div class="feature-card">
-            <div class="icon-box">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#0b3a66"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M12 2s5 6 5 10a5 5 0 0 1-10 0c0-4 5-10 5-10z" />
-                <rect x="4" y="16" width="16" height="4" rx="1" />
-              </svg>
-            </div>
-            <h3>Waterproof Material</h3>
-            <p>
-              Perfect for kitchens and bathrooms with moisture-resistant
-              material.
-            </p>
-          </div>
-
-          <!-- 7. Privacy Control -->
-          <div class="feature-card">
-            <div class="icon-box">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#0b3a66"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="3" y="3" width="18" height="12" rx="2" />
-                <line x1="3" y1="9" x2="21" y2="9" />
-                <line x1="8" y1="3" x2="8" y2="15" />
-                <line x1="16" y1="3" x2="16" y2="15" />
-              </svg>
-            </div>
-            <h3>Privacy Control</h3>
-            <p>Ensures complete daytime and nighttime privacy for your home.</p>
-          </div>
-
-          <!-- 8. Easy Cleaning -->
-          <div class="feature-card">
-            <div class="icon-box">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#0b3a66"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M7 12l4 4 6-6" />
-              </svg>
-            </div>
-            <h3>Easy Cleaning</h3>
-            <p>
-              Low-maintenance blinds that stay clean with just a light wipe.
-            </p>
-          </div>
         </div>
       </section>
+    </section>
 
-      <!-- Gallery Section -->
-      <section class="gallery" id="gallery">
-        <h3>CATEGORIES</h3>
-        <h2>Choose Your Blinds</h2>
+    <section class="features-section">
+      <section id="products"></section>
+      <h2 class="section-title">Roller Blinds Features</h2>
 
-        <div class="gallery-grid">
-          <div class="img-box">
-            <img
-              src="https://static.asianpaints.com/content/dam/asian_paints/blog/december-22/living-room-curtain-designs-for-every-style/sheer-curtain-design.jpg"
-              alt="dual-curatain"
-            />
-            <span class="img-text">DUAL CURTAIN</span>
+      <div class="features-container">
+
+        <!-- 1. UV Protection -->
+        <div class="feature-card">
+          <div class="icon-box">
+            <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A2342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="4" stroke="#4DB7E5"/>
+  <line x1="12" y1="2" x2="12" y2="6"/>
+  <line x1="12" y1="18" x2="12" y2="22"/>
+  <line x1="2" y1="12" x2="6" y2="12"/>
+  <line x1="18" y1="12" x2="22" y2="12"/>
+  <line x1="4.5" y1="4.5" x2="7" y2="7"/>
+  <line x1="17" y1="17" x2="19.5" y2="19.5"/>
+  <line x1="4.5" y1="19.5" x2="7" y2="17"/>
+  <line x1="17" y1="7" x2="19.5" y2="4.5"/>
+</svg> -->
+
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#0b3a66" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4" />
+              <line x1="12" y1="2" x2="12" y2="5" />
+              <line x1="12" y1="19" x2="12" y2="22" />
+              <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
+              <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
+              <line x1="2" y1="12" x2="5" y2="12" />
+              <line x1="19" y1="12" x2="22" y2="12" />
+              <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
+              <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
+            </svg>
+
           </div>
-
-          <div class="img-box">
-            <img
-              src="https://media.istockphoto.com/id/2208111831/photo/motorized-wood-blinds-operating-with-control-panel.webp?a=1&b=1&s=612x612&w=0&k=20&c=AQHXrIBq06Yh5eEl-aUaGbpMaJuArQ2UhBbit_0vN9k="
-              alt="motorised curtain track"
-            />
-            <span class="img-text">MOTORISED TRACK</span>
-          </div>
-
-          <div class="img-box big">
-            <img
-              src="https://i.pinimg.com/474x/91/90/8d/91908d2991e12407d98a3886b200f883.jpg"
-              alt="roller blinds"
-            />
-            <span class="img-text">ROLLER BLINDS</span>
-          </div>
-
-          <div class="img-box">
-            <img
-              src="https://idealblinds.co.uk/wp-content/uploads/2014/05/vertical-blinds.jpg"
-              alt="vertical blinds"
-            />
-            <span class="img-text">VERTICAL BLINDS</span>
-          </div>
-
-          <div class="img-box">
-            <img
-              src="https://designdecorblinds.com/wp-content/uploads/2015/06/Collinear-blind_11.jpg"
-              alt="collinear blinds"
-            />
-            <span class="img-text">COLLINEAR BLINDS</span>
-          </div>
-
-          <div class="img-box">
-            <img
-              src="https://i.pinimg.com/474x/f4/ef/df/f4efdf74489878f56a2627d158128fdc.jpg"
-              alt="wooden blinds"
-            />
-            <span class="img-text">WOODEN BLINDS</span>
-          </div>
-
-          <div class="img-box">
-            <img
-              src="https://www.fabricsandpapers.com/media/wysiwyg/roman-blinds.jpg"
-              alt="roman blinds"
-            />
-            <span class="img-text">ROMAN BLINDS</span>
-          </div>
-
-          <div class="img-box">
-            <img
-              src="https://i.pinimg.com/564x/3d/d7/6d/3dd76d3c3d6be9e587a2e35d75294d7d.jpg"
-              alt="skylite blinds"
-            />
-            <span class="img-text">SKYLITE BLINDS</span>
-          </div>
-
-          <div class="img-box">
-            <img
-              src="https://www.chicology.com/cdn/shop/files/CellularShades_LF_MorningCroissant_1.jpg?v=1763077243&width=2000"
-              alt="cellular blinds"
-            />
-            <span class="img-text">CELLULAR BLINDS</span>
-          </div>
-
-          <div class="img-box">
-            <img
-              src="https://h2imports.ca/wp-content/uploads/2024/03/Zebra-blinds-1.webp"
-              alt="zebra blinds"
-            />
-            <span class="img-text">ZEBRA BLINDS</span>
-          </div>
+          <h3>UV Protection</h3>
+          <p>Blocks harsh sunlight and harmful UV rays while keeping your interiors cool.</p>
         </div>
-      </section>
-    </main>
+
+        <!-- 2. Motorized Operation -->
+        <div class="feature-card">
+          <div class="icon-box">
+            <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A2342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="4" width="14" height="12" rx="2" stroke="#0A2342"/>
+  <line x1="3" y1="8" x2="17" y2="8" stroke="#4DB7E5"/>
+  <line x1="3" y1="12" x2="17" y2="12" stroke="#4DB7E5"/>
+  <circle cx="20" cy="10" r="2" stroke="#0A2342"/>
+  <line x1="21.5" y1="10" x2="23" y2="10"/>
+</svg> -->
+
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#0b3a66" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="7" y="2" width="10" height="20" rx="4" />
+              <circle cx="12" cy="17" r="1.5" />
+              <line x1="12" y1="7" x2="12" y2="11" />
+            </svg>
+
+          </div>
+          <h3>Motorized Operation</h3>
+          <p>Control your blinds with a remote or smart home integration for convenience.</p>
+        </div>
+
+        <!-- 3. Heat Reduction -->
+        <div class="feature-card">
+          <div class="icon-box">
+            <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A2342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6 9l6-6 6 6" stroke="#4DB7E5"/>
+  <rect x="4" y="10" width="16" height="10" rx="2" />
+  <line x1="12" y1="14" x2="12" y2="18" stroke="#4DB7E5"/>
+</svg> -->
+
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#0b3a66" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2z" />
+              <line x1="12" y1="13" x2="12" y2="17" />
+              <circle cx="12" cy="18" r="1" />
+            </svg>
+
+          </div>
+          <h3>Heat Reduction</h3>
+          <p>Reduces indoor heat and maintains a comfortable room temperature.</p>
+        </div>
+
+        <!-- 4. Noise Reduction -->
+        <div class="feature-card">
+          <div class="icon-box">
+            <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A2342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <polygon points="3 9 9 5 9 19 3 15" />
+  <line x1="12" y1="10" x2="12" y2="14" />
+  <path d="M15 9c1.5 1.5 1.5 4.5 0 6" stroke="#4DB7E5"/>
+  <path d="M18 7c3 3 3 8 0 11" stroke="#4DB7E5"/>
+</svg> -->
+
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#0b3a66" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 9 9 9 13 5 13 19 9 15 5 15" />
+              <path d="M17 9a3 3 0 0 1 0 6" />
+              <path d="M19 7a6 6 0 0 1 0 10" />
+            </svg>
+
+          </div>
+          <h3>Noise Reduction</h3>
+          <p>Minimizes outside noise using thick, premium fabric layers.</p>
+        </div>
+
+        <!-- 5. Premium Fabric Quality -->
+        <div class="feature-card">
+          <div class="icon-box">
+            <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A2342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4" y="4" width="16" height="16" rx="2"/>
+  <line x1="4" y1="8" x2="20" y2="8" stroke="#4DB7E5"/>
+  <line x1="4" y1="12" x2="20" y2="12" stroke="#4DB7E5"/>
+  <line x1="4" y1="16" x2="20" y2="16" stroke="#4DB7E5"/>
+</svg> -->
+
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#0b3a66" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="6" rx="1" />
+              <rect x="4" y="10" width="16" height="6" rx="1" />
+              <rect x="4" y="16" width="16" height="4" rx="1" />
+            </svg>
+
+          </div>
+          <h3>Premium Fabric Quality</h3>
+          <p>High-quality fabrics with blackout, sunscreen, and designer textures.</p>
+        </div>
+
+        <!-- 6. Waterproof Material -->
+        <div class="feature-card">
+          <div class="icon-box">
+            <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A2342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4" y="4" width="16" height="16" rx="2"/>
+  <line x1="4" y1="8" x2="20" y2="8" stroke="#4DB7E5"/>
+  <line x1="4" y1="12" x2="20" y2="12" stroke="#4DB7E5"/>
+  <line x1="4" y1="16" x2="20" y2="16" stroke="#4DB7E5"/>
+</svg> -->
+
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#0b3a66" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2s5 6 5 10a5 5 0 0 1-10 0c0-4 5-10 5-10z" />
+              <rect x="4" y="16" width="16" height="4" rx="1" />
+            </svg>
+
+          </div>
+          <h3>Waterproof Material</h3>
+          <p>Perfect for kitchens and bathrooms with moisture-resistant material.</p>
+        </div>
+
+        <!-- 7. Privacy Control -->
+        <div class="feature-card">
+          <div class="icon-box">
+            <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A2342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="4" width="18" height="16" rx="2"/>
+  <line x1="3" y1="9" x2="21" y2="9" stroke="#4DB7E5"/>
+  <line x1="10" y1="4" x2="10" y2="20" stroke="#4DB7E5"/>
+</svg> -->
+
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#0b3a66" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="12" rx="2" />
+              <line x1="3" y1="9" x2="21" y2="9" />
+              <line x1="8" y1="3" x2="8" y2="15" />
+              <line x1="16" y1="3" x2="16" y2="15" />
+            </svg>
+
+          </div>
+          <h3>Privacy Control</h3>
+          <p>Ensures complete daytime and nighttime privacy for your home.</p>
+        </div>
+
+        <!-- 8. Easy Cleaning -->
+        <div class="feature-card">
+          <div class="icon-box">
+            <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A2342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4" y="4" width="16" height="16" rx="2"/>
+  <path d="M8 12l2 2 6-6" stroke="#4DB7E5"/>
+</svg> -->
+
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#0b3a66" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M7 12l4 4 6-6" />
+            </svg>
+
+          </div>
+          <h3>Easy Cleaning</h3>
+          <p>Low-maintenance blinds that stay clean with just a light wipe.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+
+      <h3>CATEGORIES</h3>
+      <h2>Choose Your Blinds</h2>
+      <div class="gallery-grid">
+
+        <div class="img-box">
+          <img
+            src="https://static.asianpaints.com/content/dam/asian_paints/blog/december-22/living-room-curtain-designs-for-every-style/sheer-curtain-design.jpg"
+            alt="dual-curatain">
+          <span class="img-text">DUAL CURTAIN</span>
+        </div>
+
+        <div class="img-box">
+          <img
+            src="https://media.istockphoto.com/id/2208111831/photo/motorized-wood-blinds-operating-with-control-panel.webp?a=1&b=1&s=612x612&w=0&k=20&c=AQHXrIBq06Yh5eEl-aUaGbpMaJuArQ2UhBbit_0vN9k="
+            alt="motorised curtain track">
+          <span class="img-text">MOTORISED TRACK</span>
+        </div>
+
+        <div class="img-box big">
+          <img src="https://i.pinimg.com/474x/91/90/8d/91908d2991e12407d98a3886b200f883.jpg" alt="roller blinds">
+          <span class="img-text">ROLLER BLINDS</span>
+        </div>
+
+        <div class="img-box">
+          <img src="https://idealblinds.co.uk/wp-content/uploads/2014/05/vertical-blinds.jpg" alt="vertical blinds">
+          <span class="img-text">VERTICAL BLINDS</span>
+        </div>
+
+        <div class="img-box">
+          <img src="https://designdecorblinds.com/wp-content/uploads/2015/06/Collinear-blind_11.jpg"
+            alt="collinear blinds">
+          <span class="img-text">COLLINEAR BLINDS</span>
+        </div>
+
+        <div class="img-box">
+          <img src="https://i.pinimg.com/474x/f4/ef/df/f4efdf74489878f56a2627d158128fdc.jpg" alt="wooden blinds">
+          <span class="img-text">WOODEN BLINDS</span>
+        </div>
+
+        <div class="img-box">
+          <img src="https://www.fabricsandpapers.com/media/wysiwyg/roman-blinds.jpg" alt="roman blinds">
+          <span class="img-text">ROMAN BLINDS</span>
+        </div>
+
+        <div class="img-box">
+          <img src="https://i.pinimg.com/564x/3d/d7/6d/3dd76d3c3d6be9e587a2e35d75294d7d.jpg" alt="skylite blinds">
+          <span class="img-text">SKYLITE BLINDS</span>
+        </div>
+
+        <div class="img-box">
+          <img
+            src="https://www.chicology.com/cdn/shop/files/CellularShades_LF_MorningCroissant_1.jpg?v=1763077243&width=2000"
+            alt="cellular blinds">
+          <span class="img-text">CELLULAR BLINDS</span>
+        </div>
+
+        <div class="img-box">
+          <img src="https://h2imports.ca/wp-content/uploads/2024/03/Zebra-blinds-1.webp" alt="zebra blinds">
+          <span class="img-text">ZEBRA BLINDS</span>
+        </div>
+
+      </div>
+
+
+    </section>
+
 
     <!-- Footer started -->
     <footer class="footer">
       <div class="footer-container">
         <!-- Logo -->
         <div class="footer-logo-section">
-          <img
-            src="assets/images/logo/logo.png"
-            class="footer-logo"
-            alt="Roller Blinds"
-          />
+          <img src="assets/images/logo/logo.png" class="footer-logo" alt="Roller Blinds" />
         </div>
 
         <!-- Product Category -->
@@ -393,55 +361,37 @@
           <a href="about-us.html">About Us</a>
           <a href="gallery.html">Gallery</a>
           <a href="before-after.html">Our Works</a>
-          
+
         </div>
-        
+
 
         <!-- Follow Us -->
         <div class="footer-column">
           <h4>Follow Us</h4>
           <div class="social-links">
             <a href="#" class="social-icon">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
-                alt="IG"
-              />
+              <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="IG" />
             </a>
             <a href="#" class="social-icon">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/124/124010.png"
-                alt="FB"
-              />
+              <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="FB" />
             </a>
             <a href="#" class="social-icon">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2496/2496099.png"
-                alt="PT"
-              />
+              <img src="https://cdn-icons-png.flaticon.com/512/2496/2496099.png" alt="PT" />
             </a>
             <a href="#" class="social-icon">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
-                alt="YT"
-              />
+              <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YT" />
             </a>
           </div>
         </div>
-      </div>  
+      </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a
-      href="https://wa.me/919876543210?text=Hi%20I%20need%20help%20regarding%20your%20website"
-      class="whatsapp_float"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-        class="whatsapp_icon"
-        alt="WhatsApp"
-      />
+    <a href="https://wa.me/919876543210?text=Hi%20I%20need%20help%20regarding%20your%20website" class="whatsapp_float"
+      target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp_icon"
+        alt="WhatsApp" />
     </a>
-  </body>
+</body>
+
 </html>
