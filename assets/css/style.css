@@ -280,33 +280,34 @@
 /* Hero background slideshow */
 @keyframes slideBg {
   0% {
-    background-image: url("assets/images/products/bg-slide1.png");
+    background-image: url("../images/products/bg-slide1.png");
   }
 
   16.6% {
-    background-image: url("assets/images/products/bg-slide2.png");
+    background-image: url("../images/products/bg-slide2.png");
   }
 
   33.2% {
-    background-image: url("assets/images/products/bg-slide3.png");
+    background-image: url("../images/products/bg-slide3.png");
   }
 
   49.8% {
-    background-image: url("assets/images/products/bg-slide4.png");
+    background-image: url("../images/products/bg-slide4.png");
   }
 
   66.4% {
-    background-image: url("assets/images/products/bg-slide5.png");
+    background-image: url("../images/products/bg-slide5.png");
   }
 
   83% {
-    background-image: url("assets/images/products/bg-slide6.png");
+    background-image: url("../images/products/bg-slide6.png");
   }
 
   100% {
-    background-image: url("assets/images/products/bg-slide1.png");
+    background-image: url("../images/products/bg-slide1.png");
   }
 }
+
 
 /* ========== FEATURES SECTION ================ */
 .features-section {
