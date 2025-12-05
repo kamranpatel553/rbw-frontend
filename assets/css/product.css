@@ -237,6 +237,7 @@ body {
 /* Left: image */
 .intro-image {
   flex: 1;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
 }
 
 .intro-image img {
@@ -266,12 +267,12 @@ body {
 }
 
 .intro-text p {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.5;
   margin-bottom: 8px;
   font-family: "Poppins", sans-serif;
 }
-
+ 
 /* ========== SHOP BY CATEGORY (GRID) ========== */
 .categories {
   max-width: 1160px;
