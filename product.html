@@ -29,7 +29,6 @@
                 }
             });
     </script>
-    <!-- </header> -->
 
     <main>
         <!-- Page heading -->
@@ -40,7 +39,7 @@
         <!-- Text + Image block like screenshot -->
         <section class="roller-intro">
             <div class="intro-text">
-                
+                <h2 style="color: #5ec5e6"><b>Roller Blinds</b></h2>
                 <p>
                     Roller Blinds are a premium and modern window treatment solution,
                     designed to offer excellent privacy, temperature control, and a
@@ -60,6 +59,8 @@
                     alt="Roller Blinds" />
             </div>
         </section>
+
+        <!-- SHOP BY CATEGORY -->
         <section class="categories">
             <div class="categories-header">
                 <h2>SHOP BY CATEGORY</h2>
@@ -92,11 +93,15 @@
                 </a>
             </div>
         </section>
-        
-          <!-- 🔎 FILTERS -->
+
+        <!-- 🔎 FILTERS (ABOVE MANUAL / MOTORIZED SECTIONS) -->
         <section class="product-filters">
             <div class="filters-container">
-                <input type="text" id="productSearch" placeholder="Search by name, color, type...">
+                <input
+                    type="text"
+                    id="productSearch"
+                    placeholder="Search by name, colour, type..."
+                />
                 <select id="categoryFilter">
                     <option value="">All Products</option>
                     <option value="manual">Manual - Chain Operated</option>
@@ -104,8 +109,8 @@
                 </select>
             </div>
         </section>
-        <!-- cat -->
 
+        <!-- MANUAL cat -->
         <section class="cat-section" id="manual-cat">
             <div class="cat-header">
                 <h2>MANUAL CHAIN OPERATED</h2>
@@ -114,7 +119,7 @@
 
             <div class="products-grid">
                 <!-- Product 1 -->
-                <div class="product-card" onclick="window.location.href = 'product_detail.html'">
+                <div class="product-card" data-type="manual" onclick="window.location.href = 'product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/08/BK-ROL-D-001-compressed-3-300x400.jpg" />
                     <img class="img-hover"
@@ -126,7 +131,7 @@
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-card" onclick="window.location.href = 'product_detail.html'">
+                <div class="product-card" data-type="manual" onclick="window.location.href = 'product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/11/BK-ROL-H-003-compressed-300x400.jpg" />
                     <img class="img-hover"
@@ -138,7 +143,7 @@
                 </div>
 
                 <!-- Additional products same style -->
-                <div class="product-card" onclick="window.location.href = 'product_detail.html'">
+                <div class="product-card" data-type="manual" onclick="window.location.href = 'product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/08/BK-ROL-A-002-compressed-300x400.jpg" />
                     <img class="img-hover"
@@ -149,7 +154,7 @@
                     <p class="price">From ₹3250</p>
                 </div>
 
-                <div class="product-card" onclick="window.location.href = 'product_detail.html'">
+                <div class="product-card" data-type="manual" onclick="window.location.href = 'product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/09/BK-ROL-F-006-compressed-300x400.jpg" />
                     <img class="img-hover"
@@ -160,7 +165,7 @@
                     <p class="price">From ₹3250</p>
                 </div>
 
-                <div class="product-card" onclick="window.location.href = 'product_detail.html'">
+                <div class="product-card" data-type="manual" onclick="window.location.href = 'product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/11/BK-ROL-F-004-compressed-300x400.jpg" />
                     <img class="img-hover"
@@ -168,10 +173,10 @@
                     <h3>Sunscreen Roller Blinds</h3>
                     <p>Cream</p>
                     <p>Cream Blackout</p>
-                    <p class="price">From ₹3250</span></p>
+                    <p class="price">From ₹3250</p>
                 </div>
 
-                <div class="product-card" onclick="window.location.href = 'product_detail.html'">
+                <div class="product-card" data-type="manual" onclick="window.location.href = 'product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/11/BK-ROL-F-003-compressed-300x400.jpg" />
                     <img class="img-hover"
@@ -179,7 +184,7 @@
                     <h3>Sunscreen Roller Blinds</h3>
                     <p>Harmony</p>
                     <p>Harmony Blackout</p>
-                    <p class="price">From ₹3250</span></p>
+                    <p class="price">From ₹3250</p>
                 </div>
             </div>
         </section>
@@ -193,7 +198,8 @@
 
             <div class="products-grid">
 
-                <div class="product-card motor-card" onclick="window.location.href='product_detail.html'">
+                <div class="product-card motor-card" data-type="motorized"
+                    onclick="window.location.href='product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/11/BK-ROL-F-003-compressed-300x400.jpg" />
                     <img class="img-hover"
@@ -202,7 +208,8 @@
                     <p class="price">From ₹8250</p>
                 </div>
 
-                <div class="product-card motor-card" onclick="window.location.href='product_detail.html'">
+                <div class="product-card motor-card" data-type="motorized"
+                    onclick="window.location.href='product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/11/BK-ROL-F-004-compressed-300x400.jpg" />
                     <img class="img-hover"
@@ -211,16 +218,18 @@
                     <p class="price">From ₹8250</p>
                 </div>
 
-                <div class="product-card motor-card" onclick="window.location.href='product_detail.html'">
+                <div class="product-card motor-card" data-type="motorized"
+                    onclick="window.location.href='product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/09/BK-ROL-F-006-compressed-300x400.jpg" />
                     <img class="img-hover"
                         src="https://blindskart.com/wp-content/uploads/2021/10/Duck10001000px-300x400.jpg" />
                     <h3>Smart Motorized Roller Blind</h3>
-                    <p class="price">From ₹8250</span></p>
+                    <p class="price">From ₹8250</p>
                 </div>
 
-                <div class="product-card motor-card" onclick="window.location.href='product_detail.html'">
+                <div class="product-card motor-card" data-type="motorized"
+                    onclick="window.location.href='product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/08/BK-ROL-A-002-compressed-300x400.jpg" />
                     <img class="img-hover"
@@ -229,7 +238,8 @@
                     <p class="price">From ₹8250</p>
                 </div>
 
-                <div class="product-card motor-card" onclick="window.location.href='product_detail.html'">
+                <div class="product-card motor-card" data-type="motorized"
+                    onclick="window.location.href='product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/08/BK-ROL-D-001-compressed-3-300x400.jpg" />
                     <img class="img-hover"
@@ -238,7 +248,8 @@
                     <p class="price">From ₹8250</p>
                 </div>
 
-                <div class="product-card motor-card" onclick="window.location.href='product_detail.html'">
+                <div class="product-card motor-card" data-type="motorized"
+                    onclick="window.location.href='product_detail.html'">
                     <img class="img-default"
                         src="https://blindskart.com/wp-content/uploads/2021/11/BK-ROL-H-003-compressed-300x400.jpg" />
                     <img class="img-hover"
@@ -264,16 +275,16 @@
             <div class="footer-column">
                 <h4>Product Category</h4>
                 <a href="product.html#manual-cat">Manual - Chain Operated</a>
-          <a href="product.html#motorized-cat">Motorized (with Remote)</a>
+                <a href="product.html#motorized-cat">Motorized (with Remote)</a>
             </div>
 
             <!-- Company -->
             <div class="footer-column">
-          <h4>Company</h4>
-          <a href="about-us.html">About Us</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="before-after.html">Our Works</a>
-        </div>
+                <h4>Company</h4>
+                <a href="about-us.html">About Us</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="before-after.html">Our Works</a>
+            </div>
 
             <!-- Follow Us -->
             <div class="footer-column">
@@ -302,53 +313,53 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp_icon" />
         </a>
     </footer>
+
+    <!-- ✅ SEARCH + FILTER SCRIPT -->
     <script>
-  const searchInput = document.getElementById('productSearch');
-  const categoryFilter = document.getElementById('categoryFilter');
-  const productCards = document.querySelectorAll('.product-card');
+        const searchInput = document.getElementById('productSearch');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const productCards = document.querySelectorAll('.product-card');
 
-  const manualSection = document.getElementById('manual-cat');
-  const motorSection = document.getElementById('motorized-cat');
+        const manualSection = document.getElementById('manual-cat');
+        const motorSection = document.getElementById('motorized-cat');
 
-  function filterProducts() {
-    const searchText = searchInput.value.toLowerCase().trim();
-    const selectedType = categoryFilter.value; // '', 'manual', 'motorized'
+        function filterProducts() {
+            const searchText = searchInput.value.toLowerCase().trim();
+            const selectedType = categoryFilter.value; // '', 'manual', 'motorized'
 
-    // 🔹 Show / hide full sections
-    if (selectedType === 'manual') {
-      if (manualSection) manualSection.style.display = '';
-      if (motorSection) motorSection.style.display = 'none';
-    } else if (selectedType === 'motorized') {
-      if (manualSection) manualSection.style.display = 'none';
-      if (motorSection) motorSection.style.display = '';
-    } else {
-      // All products selected
-      if (manualSection) manualSection.style.display = '';
-      if (motorSection) motorSection.style.display = '';
-    }
+            // Section hide/show
+            if (selectedType === 'manual') {
+                if (manualSection) manualSection.style.display = '';
+                if (motorSection) motorSection.style.display = 'none';
+            } else if (selectedType === 'motorized') {
+                if (manualSection) manualSection.style.display = 'none';
+                if (motorSection) motorSection.style.display = '';
+            } else {
+                if (manualSection) manualSection.style.display = '';
+                if (motorSection) motorSection.style.display = '';
+            }
 
-    // 🔹 Filter cards inside visible sections
-    productCards.forEach(card => {
-      const cardType = card.dataset.type || ''; // manual / motorized
-      const cardText = card.textContent.toLowerCase();
+            // Card level filter
+            productCards.forEach(card => {
+                const cardType = card.dataset.type || '';
+                const cardText = card.textContent.toLowerCase();
 
-      const matchesSearch = searchText === '' || cardText.includes(searchText);
-      const matchesType = selectedType === '' || cardType === selectedType;
+                const matchesSearch = searchText === '' || cardText.includes(searchText);
+                const matchesType = selectedType === '' || cardType === selectedType;
 
-      if (matchesSearch && matchesType) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
+                if (matchesSearch && matchesType) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
 
-  if (searchInput && categoryFilter) {
-    searchInput.addEventListener('input', filterProducts);
-    categoryFilter.addEventListener('change', filterProducts);
-  }
-</script>
-
+        if (searchInput && categoryFilter) {
+            searchInput.addEventListener('input', filterProducts);
+            categoryFilter.addEventListener('change', filterProducts);
+        }
+    </script>
 </body>
 
 </html>
