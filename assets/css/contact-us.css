@@ -302,7 +302,7 @@ body {
   font-weight: 700;
   color: var(--roller);
   margin-bottom: 18px;
-  text-align: left; /* desktop + mobile dono left */
+  text-align: left;
 }
 
 /* Accordion */
@@ -326,10 +326,8 @@ body {
   align-items: center;
   color: #333;
   transition: var(--transition);
-  gap: 10px; /* NEW: text & icon spacing */
+  gap: 10px; /
 }
-
-/* NEW: text ko flexible width + left align */
 .faq-question span:first-child {
   flex: 1;
   text-align: left;
@@ -340,7 +338,7 @@ body {
   height: 28px;
   min-width: 28px;
   min-height: 28px;
-  flex: 0 0 28px;   /* NEW: fixed size, no shrink */
+  flex: 0 0 28px;   /*fixed size, no shrink */
   border-radius: 50%;
   border: 2px solid var(--roller);
   display: inline-flex;
@@ -367,7 +365,6 @@ body {
   transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
 
-/* UPDATED: max-height bada kiya taaki full table (Cost row bhi) dikh jaye */
 .faq-item.active .faq-answer {
   max-height: 2000px;
   opacity: 1;
@@ -415,10 +412,9 @@ body {
 @media (max-width: 600px) {
   .faq-title {
     font-size: 24px;
-    text-align: left; /* pehle center tha, ab left */
+    text-align: left;
   }
 
-  /* mobile pe thoda extra gap upar–neeche */
   .faq-question {
     padding: 22px 4px;
   }
