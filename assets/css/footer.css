@@ -10,7 +10,7 @@
 
 .footer {
   background: #ffffff;
-  padding: 16px 28px 20px;
+  padding: 25px 28px 20px;
   border-top: 1px solid #e5e7eb;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.08);
 }
@@ -82,7 +82,7 @@
 /* Responsive */
 @media (max-width: 900px) {
   .footer {
-    padding: 18px 16px 20px;
+    padding: 25px 16px 20px;
   }
 
   .footer-container {
@@ -108,7 +108,7 @@
 }
 
 .footer-logo-section .footer-logo {
-  margin-top: -25px;
+  margin-top: -35px;
 }
 
 /* WhatsApp floating button */
