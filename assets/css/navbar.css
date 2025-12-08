@@ -113,7 +113,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    
+
 }
 
 .hamburger span {
@@ -121,7 +121,7 @@
     height: 3px;
     background: var(--roller);
     transition: 0.3s;
-    
+
 }
 
 /* X ANIMATION */
@@ -141,7 +141,7 @@
 @media (max-width: 900px) {
     .hamburger {
         display: flex;
-        
+
     }
 
     .cta {
@@ -171,7 +171,7 @@
 
     .nav-links.open {
         display: flex;
-       
+
     }
 
     .navbar ul {

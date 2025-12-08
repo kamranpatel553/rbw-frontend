@@ -35,7 +35,8 @@
 }
 
 .footer-column {
-  min-width: 160px;
+  flex: 0 0 auto;   
+  min-width: 0;
 }
 
 .footer-column h4 {
@@ -57,7 +58,7 @@
 
 .footer-column a:hover {
   color: var(--blinds);
-  padding-left: 4px;
+  transform: scale(1.1);
 }
 
 /* Social Icons */
@@ -106,11 +107,15 @@
   }
 }
 
+.footer-logo-section .footer-logo {
+  margin-top: -25px;
+}
+
 /* WhatsApp floating button */
 .whatsapp_float {
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   bottom: 20px;
   right: 20px;
   background-color: #38cb3f;
@@ -125,4 +130,3 @@
   height: 100%;
   padding: 12px;
 }
-

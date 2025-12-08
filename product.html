@@ -7,6 +7,7 @@
     <title>Roller Blinds</title>
     <link rel="stylesheet" href="assets/css/product.css" />
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
 </head>
 
 <body>
@@ -92,6 +93,17 @@
             </div>
         </section>
         
+          <!-- 🔎 FILTERS -->
+        <section class="product-filters">
+            <div class="filters-container">
+                <input type="text" id="productSearch" placeholder="Search by name, color, type...">
+                <select id="categoryFilter">
+                    <option value="">All Products</option>
+                    <option value="manual">Manual - Chain Operated</option>
+                    <option value="motorized">Motorized (with Remote)</option>
+                </select>
+            </div>
+        </section>
         <!-- cat -->
 
         <section class="cat-section" id="manual-cat">
@@ -290,6 +302,53 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp_icon" />
         </a>
     </footer>
+    <script>
+  const searchInput = document.getElementById('productSearch');
+  const categoryFilter = document.getElementById('categoryFilter');
+  const productCards = document.querySelectorAll('.product-card');
+
+  const manualSection = document.getElementById('manual-cat');
+  const motorSection = document.getElementById('motorized-cat');
+
+  function filterProducts() {
+    const searchText = searchInput.value.toLowerCase().trim();
+    const selectedType = categoryFilter.value; // '', 'manual', 'motorized'
+
+    // 🔹 Show / hide full sections
+    if (selectedType === 'manual') {
+      if (manualSection) manualSection.style.display = '';
+      if (motorSection) motorSection.style.display = 'none';
+    } else if (selectedType === 'motorized') {
+      if (manualSection) manualSection.style.display = 'none';
+      if (motorSection) motorSection.style.display = '';
+    } else {
+      // All products selected
+      if (manualSection) manualSection.style.display = '';
+      if (motorSection) motorSection.style.display = '';
+    }
+
+    // 🔹 Filter cards inside visible sections
+    productCards.forEach(card => {
+      const cardType = card.dataset.type || ''; // manual / motorized
+      const cardText = card.textContent.toLowerCase();
+
+      const matchesSearch = searchText === '' || cardText.includes(searchText);
+      const matchesType = selectedType === '' || cardType === selectedType;
+
+      if (matchesSearch && matchesType) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  if (searchInput && categoryFilter) {
+    searchInput.addEventListener('input', filterProducts);
+    categoryFilter.addEventListener('change', filterProducts);
+  }
+</script>
+
 </body>
 
 </html>
