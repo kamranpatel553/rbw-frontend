@@ -15,6 +15,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Tap highlight remove (mobile par blink jaisa lagta hai kabhi kabhi) */
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* ======= NAVBAR (COMMON) ========= */
 .navbar {
   position: fixed;
@@ -27,8 +32,16 @@
   align-items: center;
   z-index: 1000;
   padding: 12px 28px;
+  background: transparent; /* glass bg comes from ::before */
+  overflow: visible;
+}
 
-  /* Direct glass effect on navbar */
+/* Glass layer for navbar */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.85),
@@ -37,9 +50,11 @@
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  z-index: -1; /* content ke peeche rahega */
 }
 
-/* Logo container – stable, no blink / jump */
+/* LOGO – stable, no outline / blink */
 .logo {
   display: flex;
   align-items: center;
@@ -59,9 +74,15 @@
 .logo,
 .logo:focus,
 .logo:active,
-.logo:visited {
+.logo:visited,
+.logo img:focus,
+.logo img:active {
   outline: none;
   border: none;
+}
+
+.logo:focus-visible {
+  outline: none;
 }
 
 .nav-links {
@@ -138,8 +159,7 @@
   padding: 8px;
   cursor: pointer;
 
-  /* No separate box/background – 
-     navbar ka glass bg hi visible rahega */
+  /* no box/background – navbar ka glass hi dikh raha hai */
   background: none;
   border: none;
   box-shadow: none;
