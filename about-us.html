@@ -1,132 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - Interior Company</title>
-  <link rel="stylesheet" href="assets/css/about-us.css">
-  <link rel="stylesheet" href="assets/css/footer.css">
-  <link rel="stylesheet" href="assets/css/navbar.css">
+  <title>About Us - Roller Blinds</title>
+   <link rel="stylesheet" href="assets/css/about_us.css">
+   <link rel="stylesheet" href="assets/css/navbar.css">
+   <link rel="stylesheet" href="assets/css/footer.css">
 </head>
-
 <body>
 
+  <!-- Navbar Section -->
   <div id="navbar"></div>
   <script>
     fetch("navbar.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("navbar").innerHTML = data;
+      .then(response => response.text())
+      .then(html => {
+        const container = document.getElementById("navbar");
+        const tpl = document.createElement('template');
+        tpl.innerHTML = html.trim();
 
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("navLinks");
+        container.appendChild(tpl.content.cloneNode(true));
+        const parsed = tpl.content;
+        const scripts = parsed.querySelectorAll('script');
 
-        if (hamburger && navLinks) {
-          hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("open");
-            hamburger.classList.toggle("active");
-          });
-        }
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+
+          for (let i = 0; i < oldScript.attributes.length; i++) {
+            const attr = oldScript.attributes[i];
+            newScript.setAttribute(attr.name, attr.value);
+          }
+
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+            newScript.async = false;
+            document.body.appendChild(newScript);
+          } else {
+            newScript.textContent = oldScript.textContent;
+            document.body.appendChild(newScript);
+          }
+        });
+      })
+      .catch(err => {
+        console.error("Failed to load navbar:", err);
       });
   </script>
 
+ <!-- About-us Page -->
+<section class="about-clean">
+  <div class="about-container">
 
-  <header>
-    <section class="about-clean">
-      <div class="about-container">
-
-        <div class="about-text">
-          <h1>About Us</h1>
-          <p>
-            With more than 20 years of expertise, we bring you a refined collection of premium roller blinds
-            crafted for modern living. Over the last two decades, our focus has remained simple — deliver
-            exceptional blinds that elevate homes with elegance and lasting quality.
-            <br /><br />
-            Our range includes blackout, sunscreen, day &amp; night, and motorized blinds, each curated with
-            precision, durability, and comfort in mind. As specialists in roller blinds, we ensure premium
-            materials, modern functionality, and smooth installation for every customer.
-            <br /><br />
-            Experience craftsmanship, style, and two decades of trusted service — all in one place.
-          </p>
-
-          <h2>USP</h2>
-          <ol>
-            <li>
-              <strong>Wide Range of Fabrics &amp; Colours:</strong>
-              Choose from blackout, translucent, sunscreen, and designer textures to match any interior.
-            </li>
-            <li>
-              <strong>Fast Delivery Across India:</strong>
-              Ready-made and custom-size blinds shipped quickly with reliable packaging.
-            </li>
-            <li>
-              <strong>Custom Sizes Available:</strong>
-              Order blinds made exactly to your window size for a perfect fit.
-            </li>
-          </ol>
-        </div>
-
-        <div class="about-image">
-          <img src="assets/images/about-us/about_us.png" alt="Roller blinds installation in a modern interior">
-        </div>
-
-      </div>
-    </section>
-  </header>
-
-  <!-- Footer started -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Logo -->
-      <div class="footer-logo-section">
-        <img src="assets/images/logo/logo.png" class="footer-logo" alt="Roller Blinds" />
-      </div>
-
-      <!-- Product Category -->
-      <div class="footer-column">
-        <h4>Product Category</h4>
-        <a href="product.html#manual-cat">Manual - Chain Operated</a>
-        <a href="product.html#motorized-cat">Motorized (with Remote)</a>
-      </div>
-
-      <!-- Company -->
-      <div class="footer-column">
-        <h4>Company</h4>
-        <a href="about-us.html">About Us</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="before-after.html">Our Works</a>
-
-      </div>
-
-
-      <!-- Follow Us -->
-      <div class="footer-column">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="https://www.instagram.com/" class="social-icon" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
-          </a>
-          <a href="https://www.facebook.com/" class="social-icon" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" />
-          </a>
-          <a href="https://www.pinterest.com/#" class="social-icon" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/2496/2496099.png" alt="Pinterest" />
-          </a>
-          <a href="https://youtube.com" class="social-icon" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-          </a>
-        </div>
-      </div>
-
+    <div class="about-text">
+      <h1>About us</h1>
+      <p>
+        With more than 20 years of expertise, we bring you a refined collection of premium roller blinds 
+        crafted for modern living. Over the last two decades, our focus has remained simple — deliver 
+        exceptional blinds that elevate homes with elegance and lasting quality.
+        <br /><br />
+        Our range includes blackout, sunscreen, day & night, and motorized blinds, each curated with 
+        precision, durability, and comfort in mind. As specialists in roller blinds, we ensure premium 
+        materials, modern functionality, and smooth installation for every customer.
+        <br /><br />
+        Experience craftsmanship, style, and two decades of trusted service — all in one place.
+        <br/><br>
+      </p>
+      <h1>USP</h1>
+      <p>
+        1.Wide Range of Fabrics & Colours : Choose from blackout, translucent, sunscreen, and designer textures to match any interior.
+        <br>
+        2.Fast Delivery Across India : Ready-made and custom-size blinds shipped quickly with reliable packaging.
+        <br>
+        3.Custom Sizes Available : Order blinds made exactly to your window size for a perfect fit.
+        <br>
+      </p>
     </div>
-  </footer>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/919876543210?text=Hi%20I%20need%20help%20regarding%20your%20website" class="whatsapp_float"
-    target="_blank" rel="noopener noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp_icon" alt="WhatsApp" />
-  </a>
+    <div class="about-image">
+      <img src="assets/images/about-us/about-us.png" alt="Installation Image">
+    </div>
+
+  </div>
+</section>
 </body>
+<!-- Footer Section -->
 
+  <div id="footer"></div>
+  <script>
+    fetch("footer.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
 </html>

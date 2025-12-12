@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Roller Blinds</title>
+  <title>Contact Us - Roller Blinds</title>
 
   <!-- Page styles -->
   <link rel="stylesheet" href="assets/css/contact-us.css">
@@ -13,12 +13,44 @@
 </head>
 
 <body>
-  <!-- NAVBAR (loaded via navbar.html) -->
-  <header>
-    <div id="navbar"></div>
-  </header>
+  <!-- Navbar Section -->
+  <div id="navbar"></div>
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(html => {
+        const container = document.getElementById("navbar");
+        const tpl = document.createElement('template');
+        tpl.innerHTML = html.trim();
 
-  <!-- CONTACT SECTION START -->
+        container.appendChild(tpl.content.cloneNode(true));
+        const parsed = tpl.content;
+        const scripts = parsed.querySelectorAll('script');
+
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+
+          for (let i = 0; i < oldScript.attributes.length; i++) {
+            const attr = oldScript.attributes[i];
+            newScript.setAttribute(attr.name, attr.value);
+          }
+
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+            newScript.async = false;
+            document.body.appendChild(newScript);
+          } else {
+            newScript.textContent = oldScript.textContent;
+            document.body.appendChild(newScript);
+          }
+        });
+      })
+      .catch(err => {
+        console.error("Failed to load navbar:", err);
+      });
+  </script>
+
+  <!-- CONTACT-US START -->
   <section id="contact" class="contact-section-wrapper">
     <div class="contact-us">
       <h2>Contact Us</h2>
@@ -102,7 +134,7 @@
           <!-- Q1 -->
           <article class="faq-item">
             <button class="faq-question">
-              <span>What’s the difference between blackout and sunscreen fabrics?</span>
+              <span>What's the difference between blackout and sunscreen fabrics?</span>
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
@@ -133,7 +165,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Absolutely. Whether it’s a single window or an entire office complex, we handle both retail and bulk
+              <p>Absolutely. Whether it's a single window or an entire office complex, we handle both retail and bulk
                 orders with equal attention to quality and delivery timelines.</p>
             </div>
           </article>
@@ -234,26 +266,10 @@
         document.getElementById("footer").innerHTML = data;
       });
   </script>
-  <!-- Footer Js -->
-
+ <!-- Footer Js -->
+  
   <!-- Navbar SCRIPTS -->
   <script>
-    // Load navbar HTML
-    fetch("navbar.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("navbar").innerHTML = data;
-
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("navLinks");
-
-        if (hamburger && navLinks) {
-          hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("open");
-            hamburger.classList.toggle("active");
-          });
-        }
-      });
 
     // FAQ accordion SCRIPTS
     const faqItems = document.querySelectorAll(".faq-item");
@@ -270,7 +286,7 @@
 
         if (!isActive) {
           item.classList.add("active");
-          item.querySelector(".faq-icon").textContent = "−";
+          item.querySelector(".faq-icon").textContent = "-";
         }
       });
     });

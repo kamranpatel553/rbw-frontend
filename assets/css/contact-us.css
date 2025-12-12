@@ -416,7 +416,7 @@ body {
   background: #eefaff;
 }
 
-/* MOBILE – FAQ */
+/* MOBILE - FAQ */
 @media (max-width: 600px) {
   .faq-title {
     font-size: 24px;

@@ -1,31 +1,197 @@
+<!-- navbar.html -->
 <nav class="navbar">
-  <!-- LEFT: LOGO -->
-  <div class="logo" onclick="window.location.href = 'index.html'">
-    <img src="assets/images/logo/logo.png" alt="Roller Blinds Logo" />
+  <div class="logo" onclick="window.location.href='index.html'">
+    <img src="assets/images/logo/logo.png" alt="Logo" />
   </div>
 
-  <!-- CENTER: NAV LINKS -->
   <div class="nav-links" id="navLinks">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about-us.html">About us</a></li>
+      <li><a href="about-us.html">About Us</a></li>
       <li><a href="product.html">Products</a></li>
-      <li><a href="contact-us.html">Contact us</a></li>
-      <li class="mobile-cta">
-        <a href="contact-us.html" class="btn">Get Quote</a>
-      </li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+      <li class="mobile-cta"><a href="#" class="btn open-quote">Get Quote</a></li>
     </ul>
   </div>
 
-  <!-- DESKTOP CTA -->
   <div class="cta">
-    <a href="contact-us.html" class="btn">Get Quote</a>
+    <a href="#" class="btn open-quote">Get Quote</a>
   </div>
 
-  <!-- RIGHT: HAMBURGER (MOBILE) -->
   <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- POPUP -->
+<div id="quotePopup" class="popup-overlay" aria-hidden="true">
+  <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+    <button class="close-btn" id="closePopup" aria-label="Close">&times;</button>
+    <h2 id="quoteTitle">Get a Free Quotation</h2>
+
+    <form id="quoteForm">
+      <!-- Name --> <!-- Phone -->
+      <div class="field-row">
+        <div class="col">
+          <input type="text" name="name" placeholder="Name *" required>
+        </div>
+        <div class="col">
+          <input type="tel" name="phone" placeholder="Phone Number *" required>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <input type="email" name="email" placeholder="Email " required>
+
+      <!-- City / Location -->
+      <input type="text" name="city" placeholder="City / Location *" required>
+
+      <!-- Type of Blinds -->
+      <select name="blindType" required>
+        <option value="" disabled selected>Select Blind Type *</option>
+        <option value="Blackout">Blackout</option>
+        <option value="Sunscreen">Sunscreen</option>
+        <option value="Day & Night">Day & Night</option>
+        <option value="Motorized">Motorized</option>
+        <option value="Not Sure">Not Sure</option>
+      </select>
+
+      <!-- Size fields -->
+      <div class="field-row">
+        <div class="col">
+          <input type="text" name="height" placeholder="Height (optional)">
+        </div>
+
+        <div class="col">
+          <input type="text" name="width" placeholder="Width (optional)">
+        </div>
+      </div>
+
+
+      <!-- Windows Count -->
+      <input type="number" name="windows" placeholder="Approximate Number of Windows (optional)" required>
+
+      <!-- Message -->
+      <textarea name="message" placeholder="Looking for blackout blinds for bedroom and living room"
+        rows="4"></textarea>
+
+      <!-- Submit -->
+      <button class="submit-btn" type="submit">Submit</button>
+
+
+    </form>
+
+  </div>
+</div>
+
+<!-- Js for Get Quote Form -->
+<script>
+  (function () {
+    if (document.getElementById('navbar') && document.getElementById('navbar').dataset.navInit === "1") {
+      return;
+    }
+    if (document.getElementById('navbar')) {
+      document.getElementById('navbar').dataset.navInit = "1";
+    }
+
+    // Elements
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+    const popup = document.getElementById("quotePopup");
+    const closeBtn = document.getElementById("closePopup");
+    const openBtns = document.querySelectorAll(".open-quote");
+    const form = document.getElementById("quoteForm");
+    // email & windows optional)
+    const emailField = document.querySelector('input[name="email"]');
+    if (emailField) {
+      emailField.removeAttribute("required");
+      emailField.placeholder = "Email (optional)";
+    }
+
+    const windowsField = document.querySelector('input[name="windows"]');
+    if (windowsField) {
+      windowsField.removeAttribute("required");
+      windowsField.placeholder = "Number of Windows (optional)";
+    }
+
+    // Helper open/close
+    function openPopup() {
+      if (!popup) return;
+      popup.classList.add("active");
+      popup.setAttribute("aria-hidden", "false");
+      // autofocus first input
+      const fi = popup.querySelector("input, textarea, button");
+      if (fi) fi.focus();
+    }
+    function closePopup() {
+      if (!popup) return;
+      popup.classList.remove("active");
+      popup.setAttribute("aria-hidden", "true");
+    }
+
+    // Hamburger toggle
+    if (hamburger && navLinks) {
+      hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("open");
+        hamburger.classList.toggle("active");
+      });
+    }
+
+    // Open buttons (navbar desktop + mobile)
+    if (openBtns && openBtns.length) {
+      openBtns.forEach(btn => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          openPopup();
+        });
+      });
+    }
+
+    // Close handlers
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        closePopup();
+      });
+    }
+    if (popup) {
+      popup.addEventListener("click", function (e) {
+        if (e.target === popup) closePopup();
+      });
+    }
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closePopup();
+    });
+
+    // Form submit (demo) — replace with your backend call if needed
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        // gather values
+        const data = Object.fromEntries(new FormData(form).entries());
+        console.log("Quote submitted:", data);
+        // quick UX feedback
+        const btn = form.querySelector(".submit-btn");
+        if (btn) {
+          btn.disabled = true;
+          const orig = btn.textContent;
+          btn.textContent = "Sending...";
+          setTimeout(() => {
+            btn.textContent = "Sent!";
+            form.reset();
+            setTimeout(() => {
+              btn.disabled = false;
+              btn.textContent = orig;
+              closePopup();
+            }, 800);
+          }, 800);
+        } else {
+          form.reset();
+          closePopup();
+        }
+      });
+    }
+
+  })();
+
+</script>

@@ -8,6 +8,7 @@
   --transition: all 0.3s ease;
 }
 
+/* GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +16,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* ======= NAVBAR (COMMON) ========= */
+/* =======NAVBAR BASE========= */
 .navbar {
   position: fixed;
   left: 0;
@@ -27,32 +28,18 @@
   align-items: center;
   z-index: 1000;
   padding: 12px 28px;
-  background: transparent; /* glass bg comes from ::before */
-}
-
-/* Glass layer for navbar */
-.navbar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.85),
-    rgba(255, 255, 255, 0.7)
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.7));
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-  z-index: -1; /* content ke peeche rahega */
 }
 
 .logo img {
   height: 130px;
-  cursor: pointer;
 }
 
+/* NAV LINKS */
 .nav-links {
   flex: 1;
   display: flex;
@@ -65,9 +52,6 @@
   display: flex;
   gap: 25px;
   align-items: center;
-  justify-content: flex-end;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar a {
@@ -81,7 +65,7 @@
   color: var(--blinds);
 }
 
-/* Desktop CTA button */
+/* CTA BUTTON (DESKTOP) */
 .cta .btn {
   border: 2px solid var(--roller);
   padding: 12px 22px;
@@ -95,10 +79,11 @@
 
 .cta .btn:hover {
   background: var(--blinds);
-  border: 2px solid var(--blinds);
+  border-color: var(--blinds);
   color: var(--white);
 }
 
+/* COMMON BUTTON */
 .btn {
   border: 2px solid var(--roller);
   padding: 10px 20px;
@@ -111,44 +96,34 @@
   transition: var(--transition);
 }
 
-/* Mobile CTA (inside menu, by default hidden) */
+/* MOBILE CTA */
 .mobile-cta {
   display: none;
 }
 
-/* ===== HAMBURGER ICON (COMMON) ===== */
+/* HAMBURGER ICON */
 .hamburger {
-  display: none;              /* show only on mobile */
+  display: none;
   margin-left: auto;
   flex-direction: column;
-  gap: 6px;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
-  cursor: pointer;
-
-  /* no box/background – navbar bg visible behind */
+  gap: 5px;
+  width: 30px;
+  height: 30px;
   background: none;
   border: none;
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-
-  align-items: center;
-  justify-content: center;
+  cursor: pointer;
 }
 
 .hamburger span {
   width: 100%;
   height: 3px;
   background: var(--roller);
-  border-radius: 2px;
-  transition: 0.3s ease; /* for X animation */
+  transition: 0.3s;
 }
 
-/* X ANIMATION (when menu open) */
+/* HAMBURGER → CROSS ANIMATION */
 .hamburger.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -156,18 +131,18 @@
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ===== NAVBAR RESPONSIVE (MOBILE) ===== */
-@media (max-width: 900px) {
+/* =========NAVBAR RESPONSIVENESS========== */
 
+@media (max-width: 900px) {
   .hamburger {
-    display: flex; /* show hamburger on mobile */
+    display: flex;
   }
 
   .cta {
-    display: none; /* hide desktop CTA on mobile */
+    display: none;
   }
 
   .nav-links {
@@ -175,18 +150,14 @@
     top: 80px;
     left: 0;
     right: 0;
-
-    /* Stronger glass blur than navbar */
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.8));
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: none;
     flex-direction: column;
-    padding: 18px 22px 22px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    padding: 15px 20px 20px;
   }
 
   .nav-links.open {
@@ -196,7 +167,7 @@
   .navbar ul {
     flex-direction: column;
     align-items: flex-start;
-    gap: 14px;
+    gap: 12px;
     width: 100%;
   }
 
@@ -207,11 +178,281 @@
   .mobile-cta {
     display: block;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 8px;
   }
 
   .mobile-cta .btn {
     width: 100%;
     text-align: center;
   }
+}
+
+/* ===========POPUP STYLING========== */
+
+/* scroll lock helper*/
+.no-scroll {
+  overflow: hidden !important;
+  height: 100% !important;
+}
+
+/* OVERLAY */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.40);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  z-index: 2000;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+/* POPUP BOX */
+.popup-box {
+  width: min(94%, 520px);
+  max-width: 520px;
+  padding: 32px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  margin: 0 12px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+  position: relative;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* popup open animation */
+@keyframes popin {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.popup-box {
+  animation: popin 0.28s ease;
+}
+
+/* CLOSE BUTTON (inside popup) */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--roller);
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  background: var(--blinds);
+}
+
+/* FORM WRAPPER */
+#quoteForm {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* ========= FORM FIELDS============ */
+#quoteForm input,
+#quoteForm textarea,
+#quoteForm select {
+  width: 100%;
+  box-sizing: border-box;
+
+  /* Bigger fields */
+  padding: 12px 18px;
+  margin: 14px 0;
+  font-size: 17px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.90);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  outline: none;
+  transition: var(--transition);
+}
+
+/* Focus */
+#quoteForm input:focus,
+#quoteForm textarea:focus,
+#quoteForm select:focus {
+  background: #ffffff;
+  border-color: var(--roller);
+  box-shadow: 0 0 14px rgba(11, 58, 102, 0.14);
+}
+
+/* TEXTAREA sizing */
+#quoteForm textarea {
+  min-height: 120px;
+  max-height: 320px;
+  resize: vertical;
+  line-height: 1.45;
+}
+
+/* SELECT dropdown arrow & spacing */
+#quoteForm select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='20' height='20' viewBox='0 0 20 20' fill='%230b3a66' xmlns='http://www.w3.org/2000/svg'><path d='M5 7L10 12L15 7'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 20px;
+  padding-right: 56px;
+}
+
+#quoteForm input::placeholder,
+#quoteForm textarea::placeholder {
+  color: rgba(17, 24, 39, 0.45);
+  font-weight: 500;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  width: 100%;
+  padding: 18px 20px;
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: var(--roller);
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.submit-btn:hover {
+  background: var(--blinds);
+}
+
+.field-row {
+  display: flex;
+  gap: 12px;
+}
+
+.field-row .col {
+  flex: 1;
+}
+
+/* Popup form Responsiveness */
+@media (max-width: 720px) {
+  .popup-box {
+    width: min(96%, 520px);
+    padding: 24px;
+    max-height: calc(100vh - 120px);
+    border-radius: 14px;
+  }
+
+  #quoteForm input,
+  #quoteForm textarea,
+  #quoteForm select {
+    padding: 16px 18px;
+    font-size: 16px;
+  }
+
+  #quoteTitle {
+    font-size: 24px;
+  }
+
+  .submit-btn {
+    padding: 16px 18px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 420px) {
+  .popup-overlay {
+    padding: 40px 12px;
+  }
+
+  .popup-box {
+    width: min(96%, 520px);
+    padding: 18px;
+    max-height: calc(100vh - 72px);
+    border-radius: 12px;
+  }
+
+  .field-row input,
+  .field-row select {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  #quoteTitle {
+    font-size: 20px;
+  }
+
+  #quoteForm input,
+  #quoteForm textarea,
+  #quoteForm select {
+    padding: 14px 16px;
+    font-size: 13px;
+    margin: 12px 0;
+  }
+
+  .submit-btn {
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+
+  #quoteForm input,
+  #quoteForm textarea,
+  #quoteForm select {
+    padding: 14px 16px;
+    font-size: 10px;
+    margin: 12px 0;
+  }
+}
+
+
+/* scrollbars */
+.popup-box::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.popup-box::-webkit-scrollbar-thumb {
+  background: rgba(11, 58, 102, 0.18);
+  border-radius: 8px;
+}
+
+/* ensure heavy content inside popup doesn't push edges horizontally */
+.popup-box * {
+  box-sizing: border-box;
+}
+
+.field-row .col {
+  min-width: 0;
+}
+
+.field-row input,
+.field-row select {
+  min-width: 0;
 }

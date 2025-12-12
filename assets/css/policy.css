@@ -1,0 +1,66 @@
+:root {
+  --roller: #0b3a66;
+  --blinds: #5ec5e6;
+  --bg: #f9f9f9;
+  --text: #333;
+  --white: #fff;
+  --muted: #6b7280;
+  --transition: all 0.3s ease;
+}
+
+/* ========== GLOBAL RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Page container spacing */
+.policy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+}
+
+/* Main heading */
+.policy-container h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #0b3a66;
+  margin-bottom: 20px;
+}
+
+.policy-container .updated {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+
+/* Section headings */
+.policy-container h2 {
+  font-size: 22px;
+  margin-top: 30px;
+  color: #0b3a66;
+}
+
+/* Paragraph styling */
+.policy-container p {
+  line-height: 1.7;
+  color: black;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+/* Bullet points */
+.policy-container ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.policy-container ul li {
+  line-height: 1.6;
+  color: black;
+  font-size: 20px;
+}

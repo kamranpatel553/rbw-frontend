@@ -1,0 +1,89 @@
+:root{
+  --nav-color: #0b3a66; /* navbar font color you mentioned */
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --radius: 12px;
+  --max-width: 740px;
+  --shadow: 0 8px 30px rgba(11, 58, 102, 0.08);
+  --card-padding: 20px;
+  font-family:"Poppins", sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  /* light page background like your reference */
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ensure some space between navbar (if present) and card */
+.page-wrapper{
+  width:100%;
+  padding:32px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start; /* keeps card toward top like screenshot */
+}
+
+/* Main card */
+.tc-card{
+  width:100%;
+  margin-top: 60px;
+  max-width:var(--max-width);
+  
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:var(--card-padding);
+  position:relative;
+  border:1px solid rgba(11,58,102,0.06);
+}
+
+
+
+/* Title */
+.tc-title{
+  margin:0 0 12px 0;
+  font-size:20px;
+  color:var(--nav-color);
+  font-weight:600;
+}
+
+/* Scrollable content box with subtle border like ref */
+.tc-content{
+  max-height:580px;       /* adjust height as you want */
+  overflow:auto;
+  padding:14px;
+  border-radius:8px;
+  border:1px solid rgba(11,58,102,0.06);
+ 
+  color:#0b3a66;
+  font-size:19px;
+  line-height:1.6;
+}
+
+/* headings and paragraphs inside */
+.tc-content h3{
+  margin:10px 0 6px;
+  font-size:13px;
+  font-weight:600;
+  color:#0b3a66;
+}
+.tc-content p{
+  margin:0 0 12px 0;
+  color:black;
+  font-size:13px;
+}
+
+
+
+/* responsive tweaks */
+@media (max-width:560px){
+  :root { --max-width: 92vw; }
+  .tc-content { max-height: 55vh; }
+  .tc-title{ font-size:16px; }
+}

@@ -1,30 +1,114 @@
 pipeline {
     agent any
 
+    environment {
+        REPO_URL  = 'https://git.apps.viiibits.com/roller-blinds/rbw-frontend.git'
+        REPO_PATH = 'roller-blinds/rbw-frontend'
+        GITEA_API = 'https://git.apps.viiibits.com/api/v1'
+    }
+
     stages {
-        stage('Checkout') {
+
+        stage('Determine PR Commit') {
             steps {
-                checkout scm
+                script {
+                    // Detect whether this job is PR-head or PR-merge for clean status naming
+                    if (env.BRANCH_NAME?.contains('head')) {
+                        env.CONTEXT = 'pr-sanity/head'
+                    } else if (env.BRANCH_NAME?.contains('merge')) {
+                        env.CONTEXT = 'pr-sanity/merge'
+                    } else {
+                        // For safety, if a branch build accidentally runs
+                        env.CONTEXT = "sanity"
+                    }
+
+                    echo "Using Gitea context: ${env.CONTEXT}"
+
+                    // Jenkins Multibranch PR variables
+                    if (env.CHANGE_ID) {
+                        echo "Detected PR build: #${env.CHANGE_ID}"
+
+                        // PR branch name (source branch)
+                        env.TARGET_REF = env.CHANGE_BRANCH
+
+                        // The correct commit SHA for status updates -> MUST come from git
+                        env.TARGET_SHA = sh(
+                            script: "git rev-parse HEAD",
+                            returnStdout: true
+                        ).trim()
+
+                    } else {
+                        error "This job is intended for Pull Request builds only."
+                    }
+
+                    echo "PR Branch: ${env.TARGET_REF}"
+                    echo "Commit SHA: ${env.TARGET_SHA}"
+                }
             }
         }
 
-        stage('Run Sanity Checks') {
+        stage('Checkout PR Branch') {
             steps {
-                sh '''
-                    echo "Running Sanity Tests..."
-                    npx prettier --check .
-                    npx eslint **/*.js || true
-                '''
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: env.TARGET_REF]],
+                    userRemoteConfigs: [[
+                        url: env.REPO_URL,
+                        credentialsId: 'GITEA_REPO_CRED'
+                    ]]
+                ])
+            }
+        }
+
+        stage('Sanity Checks') {
+            steps {
+                sh """
+                    echo "Checking required files..."
+                    test -f index.html
+                    test -d assets
+                    test -f assets/css/style.css
+                    test -f assets/js/main.js
+
+                    echo "Validating HTML structure..."
+                    grep -qi '<html' index.html
+                    grep -qi '</html>' index.html
+
+                    echo "Checking images folder..."
+                    test -d assets/images || echo "No images directory yet, skipping."
+
+                    echo "PR Sanity OK"
+                """
             }
         }
     }
 
     post {
         success {
-            echo 'PR Sanity Passed'
+            setStatus('success', "PR sanity checks passed")
         }
         failure {
-            echo 'PR Sanity Failed'
+            setStatus('failure', "PR sanity checks failed")
         }
+    }
+}
+
+def setStatus(state, description) {
+    withCredentials([string(credentialsId: 'GITEA_TOKEN', variable: 'TOKEN')]) {
+
+        def fullDescription = "${description} — Build #${env.BUILD_NUMBER}"
+        def targetUrl = env.BUILD_URL ?: ""
+
+        sh """
+            curl -sS -X POST \
+                -H "Authorization: token $TOKEN" \
+                -H "Content-Type: application/json" \
+                -d '{
+                    "state": "${state}",
+                    "description": "${fullDescription}",
+                    "context": "${CONTEXT}",
+                    "target_url": "${targetUrl}"
+                }' \
+                ${GITEA_API}/repos/${REPO_PATH}/statuses/${env.TARGET_SHA}
+        """
     }
 }

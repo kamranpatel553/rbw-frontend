@@ -4,31 +4,49 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roller Blinds</title>
+    <title>Products - Roller Blinds</title>
     <link rel="stylesheet" href="assets/css/product.css" />
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
 </head>
 
 <body>
-    <div id="navbar"></div>
-    <script>
-        fetch("navbar.html")
-            .then((response) => response.text())
-            .then((data) => {
-                document.getElementById("navbar").innerHTML = data;
+    <!-- Navbar Section -->
+  <div id="navbar"></div>
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(html => {
+        const container = document.getElementById("navbar");
+        const tpl = document.createElement('template');
+        tpl.innerHTML = html.trim();
 
-                const hamburger = document.getElementById("hamburger");
-                const navLinks = document.getElementById("navLinks");
+        container.appendChild(tpl.content.cloneNode(true));
+        const parsed = tpl.content;
+        const scripts = parsed.querySelectorAll('script');
 
-                if (hamburger && navLinks) {
-                    hamburger.addEventListener("click", () => {
-                        navLinks.classList.toggle("open");
-                        hamburger.classList.toggle("active");
-                    });
-                }
-            });
-    </script>
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+
+          for (let i = 0; i < oldScript.attributes.length; i++) {
+            const attr = oldScript.attributes[i];
+            newScript.setAttribute(attr.name, attr.value);
+          }
+
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+            newScript.async = false;
+            document.body.appendChild(newScript);
+          } else {
+            newScript.textContent = oldScript.textContent;
+            document.body.appendChild(newScript);
+          }
+        });
+      })
+      .catch(err => {
+        console.error("Failed to load navbar:", err);
+      });
+  </script>
 
     <main>
         <!-- Page heading -->
@@ -113,7 +131,7 @@
             </div>
 
             <div class="products-grid">
-                <!-- ✅ 30 SAMPLE MANUAL PRODUCTS -->
+                <!-- MANUAL PRODUCTS -->
                 <!-- 1 -->
                 <div class="product-card" data-type="manual" onclick="window.location.href = 'product-detail.html'">
                     <img class="img-default"
@@ -186,8 +204,7 @@
                     <p class="price">From ₹3250</p>
                 </div>
 
-                <!-- 7–30: duplicate / varied names -->
-                <!-- You can later replace with real products -->
+            
                 <!-- 7 -->
                 <div class="product-card" data-type="manual" onclick="window.location.href = 'product-detail.html'">
                     <img class="img-default"
@@ -462,7 +479,7 @@
 
             </div>
 
-            <!-- ✅ Pagination for Manual -->
+            <!-- Pagination for Manual -->
             <div class="pagination" id="manualPagination"></div>
         </section>
 
@@ -474,7 +491,7 @@
             </div>
 
             <div class="products-grid">
-                <!-- ✅ 30 SAMPLE MOTORIZED PRODUCTS -->
+                <!-- MOTORIZED PRODUCTS -->
                 <!-- 1 -->
                 <div class="product-card motor-card" data-type="motorized"
                     onclick="window.location.href='product-detail.html'">
@@ -541,7 +558,6 @@
                     <p class="price">From ₹8250</p>
                 </div>
 
-                <!-- 7–30 similar copies -->
                 <!-- 7 -->
                 <div class="product-card motor-card" data-type="motorized"
                     onclick="window.location.href='product-detail.html'">
@@ -785,7 +801,7 @@
 
             </div>
 
-            <!-- ✅ Pagination for Motorized -->
+            <!-- Pagination for Motorized -->
             <div class="pagination" id="motorizedPagination"></div>
         </section>
 
@@ -801,10 +817,7 @@
             });
     </script>
 
-    <!-- ✅ SEARCH + FILTER + PAGINATION SCRIPT -->
-
-    <!-- ✅ SEARCH + FILTER + RESPONSIVE PAGINATION SCRIPT -->
-    <!-- ✅ SEARCH + FILTER + RESPONSIVE PAGINATION SCRIPT -->
+    <!-- SEARCH + FILTER + RESPONSIVE PAGINATION SCRIPT -->
     <script>
         const searchInput = document.getElementById('productSearch');
         const categoryFilter = document.getElementById('categoryFilter');
@@ -819,10 +832,10 @@
         const manualPagination = document.getElementById('manualPagination');
         const motorPagination = document.getElementById('motorizedPagination');
 
-        // 👇 Responsive PAGE_SIZE
+        // 👇 Responsive PAGE_SIZE - We can change the number of pages from here 
         function getPageSize() {
             const w = window.innerWidth;
-            if (w > 1025) return 20; // Desktop
+            if (w > 1025) return 20; // Desktop 
             if (w > 600) return 15;  // Tablets (600px-1024px)
             return 10;              // Mobile (<=600px)
         }

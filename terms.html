@@ -1,0 +1,108 @@
+<!Doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terms and Conditions — Roller Blinds</title>
+
+  <!-- Add your navbar/footer CSS here if needed -->
+  <link rel="stylesheet" href="assets/css/navbar.css"> 
+   <link rel="stylesheet" href="assets/css/footer.css"> 
+
+  <link rel="stylesheet" href="assets/css/terms.css">
+</head>
+<body>
+ <!-- Navbar Section -->
+  <div id="navbar"></div>
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(html => {
+        const container = document.getElementById("navbar");
+        const tpl = document.createElement('template');
+        tpl.innerHTML = html.trim();
+
+        container.appendChild(tpl.content.cloneNode(true));
+        const parsed = tpl.content;
+        const scripts = parsed.querySelectorAll('script');
+
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+
+          for (let i = 0; i < oldScript.attributes.length; i++) {
+            const attr = oldScript.attributes[i];
+            newScript.setAttribute(attr.name, attr.value);
+          }
+
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+            newScript.async = false;
+            document.body.appendChild(newScript);
+          } else {
+            newScript.textContent = oldScript.textContent;
+            document.body.appendChild(newScript);
+          }
+        });
+      })
+      .catch(err => {
+        console.error("Failed to load navbar:", err);
+      });
+  </script>
+
+ <!--  Terms and condition-->
+   
+  <main class="page-wrapper">
+    <div class="tc-card" role="dialog" aria-labelledby="tc-title" aria-modal="true">
+      
+      <h1 id="tc-title" class="tc-title">Terms and Conditions</h1>
+
+      <div class="tc-content" tabindex="0">
+
+        <h3>1. Introduction</h3>
+        <p>Welcome to <strong>Roller Blinds</strong>  (“we”). By accessing and using this website, you agree to follow these terms and conditions. If you do not agree with any part of these terms, please do not use this website.</p>
+
+        <h3>2. Website Purpose</h3>
+        <p>This website is intended solely for informational purposes. We showcase different types of roller blinds such as blackout blinds, sunscreen blinds, and manual/motorized blinds. We do not currently offer online ordering or payment through this website.</p>
+
+        <h3>3. Product Information</h3>
+        <p>All product descriptions, images, and details shown on this website are for general information only. While we aim to provide accurate and updated information, we cannot guarantee that all content is complete, updated, or error-free.</p>
+
+        <h3>4. No Online Transactions</h3>
+        <p>We do not provide online purchasing at the moment. If you wish to purchase blinds or request a service, you may contact us through our Contact page, phone number, email, or by visiting us directly (if applicable).</p>
+
+        <h3>5. Enquiries & Communication</h3>
+        <p>Submitting an enquiry form or contacting us through the website does not create any obligation or contract. Our team will respond based on availability and working hours.</p>
+
+        <h3>6. Intellectual Property</h3>
+        <p>All content on this website, including text, images, graphics, and design, is the property of Roller Blinds unless stated otherwise. Unauthorized copying or use of our content is prohibited.</p>
+
+        <h3>7. Third-Party Links</h3>
+        <p>If our website contains external links, they are for convenience only. We are not responsible for the content or accuracy of third-party websites.</p>
+
+        <h3>8. Limitation of Liability</h3>
+        <p>We are not liable for any direct, indirect, or incidental damages arising from your use of our website or reliance on its content. Use of this website is at your own risk.</p>
+
+        <h3>9. Updates to Terms</h3>
+        <p>We may update or modify these terms occasionally. The latest version will always be posted on this page. Continued use of the website indicates your acceptance of the updated terms.</p>
+
+        <h3>10. Contact Information</h3>
+        <p>For any questions regarding these terms, please reach out through our Contact Us page.</p>
+
+      </div>
+
+     
+    </div>
+  </main>
+
+<!-- Footer started -->
+    <div id="footer"></div>
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+
+</body>
+</html>
