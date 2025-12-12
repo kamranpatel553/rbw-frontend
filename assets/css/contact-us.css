@@ -330,6 +330,9 @@ body {
   color: #333;
   text-align: left;
   transition: var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
 }
 
 .faq-question span:first-child {
@@ -337,26 +340,18 @@ body {
   text-align: left;
 }
 
+/* --- NEW CLEAN DROPDOWN ICON (NO CIRCLE) --- */
 .faq-icon {
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
-  min-height: 28px;
-  flex: 0 0 28px;
-  border-radius: 50%;
-  border: 2px solid var(--roller);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1;
-  transition: var(--transition);
+  color: var(--roller);
+  transition: transform 0.3s ease;
 }
 
+/* Rotate arrow when active */
 .faq-item.active .faq-icon {
-  background: var(--blinds);
-  border-color: var(--blinds);
-  color: var(--white);
+  transform: rotate(180deg);
+  color: var(--blinds);
 }
 
 /* Answer */
@@ -371,12 +366,12 @@ body {
 }
 
 .faq-item.active .faq-answer {
-  max-height: 2000px; /* enough height so full table shows (including Cost row) */
+  max-height: 2000px; 
   opacity: 1;
   padding: 8px 0 24px;
 }
 
-/* Inner spacing inside answer */
+/* Inner spacing */
 .faq-answer p {
   margin-bottom: 14px;
 }
@@ -416,7 +411,7 @@ body {
   background: #eefaff;
 }
 
-/* MOBILE - FAQ */
+/* MOBILE */
 @media (max-width: 600px) {
   .faq-title {
     font-size: 24px;
@@ -435,3 +430,4 @@ body {
     font-size: 13px;
   }
 }
+

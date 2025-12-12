@@ -135,7 +135,7 @@
           <article class="faq-item">
             <button class="faq-question">
               <span>What's the difference between blackout and sunscreen fabrics?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon">▼</span>
             </button>
             <div class="faq-answer">
               <p><strong>Blackout:</strong> Blocks virtually all light, giving full privacy and darkness — ideal for
@@ -149,7 +149,7 @@
           <article class="faq-item">
             <button class="faq-question">
               <span>How do I clean and maintain roller blinds?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon">▼</span>
             </button>
             <div class="faq-answer">
               <p>Regular maintenance is easy: simply dust or wipe with a soft, damp cloth. For fabrics like PVC or
@@ -162,7 +162,7 @@
           <article class="faq-item">
             <button class="faq-question">
               <span>Do you accept bulk or commercial orders?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon">▼</span>
             </button>
             <div class="faq-answer">
               <p>Absolutely. Whether it's a single window or an entire office complex, we handle both retail and bulk
@@ -174,7 +174,7 @@
           <article class="faq-item">
             <button class="faq-question">
               <span>Are your roller blinds suitable for kitchens and bathrooms?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon">▼</span>
             </button>
             <div class="faq-answer">
               <p>Yes. We have moisture-resistant / waterproof fabric options like PVC or vinyl, which work well in humid
@@ -186,7 +186,7 @@
           <article class="faq-item">
             <button class="faq-question">
               <span>Which is better - Curtains or Roller Blinds?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon">▼</span>
             </button>
             <div class="faq-answer">
               <p>Quick comparison:</p>
@@ -266,30 +266,31 @@
         document.getElementById("footer").innerHTML = data;
       });
   </script>
- <!-- Footer Js -->
-  
-  <!-- Navbar SCRIPTS -->
+  <!-- Footer Js -->
   <script>
-
-    // FAQ accordion SCRIPTS
+    // FAQ accordion with dropdown arrows
     const faqItems = document.querySelectorAll(".faq-item");
 
     faqItems.forEach(item => {
       const btn = item.querySelector(".faq-question");
+
       btn.addEventListener("click", () => {
         const isActive = item.classList.contains("active");
 
+
         faqItems.forEach(i => {
           i.classList.remove("active");
-          i.querySelector(".faq-icon").textContent = "+";
+          i.querySelector(".faq-icon").textContent = "▲"; // Closed
         });
+
 
         if (!isActive) {
           item.classList.add("active");
-          item.querySelector(".faq-icon").textContent = "-";
+          item.querySelector(".faq-icon").textContent = "▲"; // Open
         }
       });
     });
+
   </script>
 </body>
 

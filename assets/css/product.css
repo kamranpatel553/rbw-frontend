@@ -322,33 +322,76 @@ body {
 
 /* ============ FOOTER ============ */
 
+/* ================================
+   GLOBAL FILTER BAR (Manual/Motorized)
+=================================== */
+
 .product-filters {
-  max-width: 1160px;
-  margin: 0 auto 10px;
-  padding: 0 20px;
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: right;
 }
 
 .filters-container {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 750px;
 }
 
-#productSearch,
-#categoryFilter {
-  padding: 8px 10px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  min-width: 180px;
+/* Search Input */
+.filters-container input[type="text"],
+.sectionSearch {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1.5px solid #d4d4d4;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    outline: none;
+    background: #fff;
+     max-width: 450px;
 }
 
-#productSearch:focus,
-#categoryFilter:focus {
-  border-color: var(--blinds);
-  box-shadow: 0 0 0 2px rgba(94, 197, 230, 0.2);
+.filters-container input[type="text"]:focus,
+.sectionSearch:focus {
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
 }
+
+/* Dropdown Styling */
+.filters-container select,
+.sectionType {
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1.5px solid #d4d4d4;
+    font-size: 15px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filters-container select:focus,
+.sectionType:focus {
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
+}
+
+/* Improve mobile spacing */
+@media (max-width: 600px) {
+    .filters-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filters-container input,
+    .filters-container select {
+        width: 100%;
+    }
+}
+
 
 /* ========== PAGINATION ========== */
 .pagination {
