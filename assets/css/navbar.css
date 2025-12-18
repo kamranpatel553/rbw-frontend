@@ -37,6 +37,8 @@
 
 .logo img {
   height: 130px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* NAV LINKS */
@@ -184,6 +186,10 @@
   .mobile-cta .btn {
     width: 100%;
     text-align: center;
+  }
+
+  .logo img {
+    height: 100px; /* Reduce logo size on tablet/mobile */
   }
 }
 
