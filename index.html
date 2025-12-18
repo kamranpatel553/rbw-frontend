@@ -8,13 +8,51 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/testimonials.css">
+  <link rel="stylesheet" href="assets/css/gallery.css">
+  <link rel="stylesheet" href="assets/css/clients.css">
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
 </head>
 
 <body>
   <!-- Navbar Section -->
   <div id="navbar"></div>
-  <script src="assets/js/load-components.js"></script>
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(html => {
+        const container = document.getElementById("navbar");
+        const tpl = document.createElement('template');
+        tpl.innerHTML = html.trim();
+
+        container.appendChild(tpl.content.cloneNode(true));
+        const parsed = tpl.content;
+        const scripts = parsed.querySelectorAll('script');
+
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+
+          for (let i = 0; i < oldScript.attributes.length; i++) {
+            const attr = oldScript.attributes[i];
+            newScript.setAttribute(attr.name, attr.value);
+          }
+
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+            newScript.async = false;
+            document.body.appendChild(newScript);
+          } else {
+            newScript.textContent = oldScript.textContent;
+            document.body.appendChild(newScript);
+          }
+        });
+      })
+      .catch(err => {
+        console.error("Failed to load navbar:", err);
+      });
+  </script>
 
 <!-- Home page -->
 
@@ -184,7 +222,7 @@
 
       </div>
     </section>
-
+<!-- 
     <section class="gallery" id="gallery">
 
       <h3>CATEGORIES</h3>
@@ -250,9 +288,134 @@
 
       </div>
 
-    </section>
+    </section> -->
+
+    <!--Gallery part-->
+      <!-- Header -->
+  <section class="gallery-header">
+    <h5>GALLERY</h5>
+    <h1>Where To Use?</h1>
+  </section>
+
+  <!-- Main Image -->
+  <section class="gallery-main">
+    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" alt="Window blinds living room">
+  </section>
+
+  <!-- Thumbnails -->
+  <section class="thumbnails">
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" alt="Living Room">
+    </div>
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36" alt="Bedroom">
+    </div>
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae" alt="Kitchen">
+    </div>
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f" alt="Office">
+    </div>
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb" alt="Dining">
+    </div>
+  </section>
+  <!-- JS part of Gallery-->
+  <script src="assets/js/gallery.js"></script>
+
+    <!-- End of Gallery part-->
+
+
+    <!-- Testimonials code-->
+     <div class="section__container">
+    <div class="header">
+      <p>TESTIMONIALS</p>
+      <h1>What our clients say about us.</h1>
+    </div>
+
+    <div class="slider">
+      <div class="slider-track">
+
+        <div class="card">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <p>
+            I've been working with these guys for a long time and I can say that
+            my house is in the perfect hands.
+          </p>
+          <hr />
+          <img src="https://i.pravatar.cc/100?img=1" />
+          <p class="name">Allan Collins</p>
+        </div>
+
+        <div class="card">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <p>
+            Working with Sentry Oak is just great, every problem in my house is
+            solved in a matter of days.
+          </p>
+          <hr />
+          <img src="https://i.pravatar.cc/100?img=2" />
+          <p class="name">Clay Washington</p>
+        </div>
+
+        <div class="card">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <p>
+            Once a pipe burst in my kitchen and an hour later it was already
+            repaired, thanks to Sentry Oak.
+          </p>
+          <hr />
+          <img src="https://i.pravatar.cc/100?img=3" />
+          <p class="name">Tanya Grant</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  <!--JS part of Testimonials-->
+  <script src="assets/js/testimonials.js"></script>
+<!-- End of Testimonials code-->
+
+<!--Our Clients-->
+
+  <section class="clients-section">
+    <small>BRANDS WHO TRUST US</small>
+    <h2>Our Clients</h2>
+
+    <div class="slider-wrapper">
+      <div class="clients-grid" id="clientsGrid">
+        <div class="client-card"><img src="https://www.logo.wine/logo/Thermax/Thermax-Logo.wine.svg" alt="Thermax"></div>
+        <div class="client-card"><img src="https://pharmaoffer.com/media/cache/clr/upload/logo/centaur-pharma.webp?version=20242307" alt="Centaur"></div>
+        <div class="client-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQluK5wzcWraZoN3P8LIVDQLRmJJBa6zAr55Q&s" alt="7Apple"></div>
+        <div class="client-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPVjXbTQMkTzh5Y6SJHeQzdlOT1Ggv0BPyhw&s" alt="Flash Electronics"></div>
+        <div class="client-card"><img src="https://alchemyagencies.com/app/uploads/2020/05/OAC_Logo_OmniActive_Verti_RGB-1.png" alt="Omniactive"></div>
+        <div class="client-card"><img src="https://www.emcure.com/wp-content/uploads/2025/02/Emcure.png" alt="Emcure"></div>
+        <div class="client-card"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/ANSYS_logo.png" alt="Ansys"></div>
+        <div class="client-card"><img src="https://www.punetechtrol.com/upload/news/pt-logo.jpeg" alt="Pune Techtrol"></div>
+      </div>
+
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+  <!--JS part of Our Clients-->
+  <script src="assets/js/clients.js"></script>
+<!-- End of Our Clients-->
+
     <!-- Footer started -->
     <div id="footer"></div>
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
 </body>
 
 </html>
