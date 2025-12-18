@@ -1,4 +1,3 @@
-/* =============== ROOT VARIABLES (PAGE THEME) =============== */
 :root {
   --roller: #0b3a66;
   --blinds: #5ec5e6;
@@ -9,90 +8,58 @@
   --transition: all 0.3s ease;
 }
 
-
-main, .about-clean, .contact-section-wrapper {
-  flex: 1;
-}
-/* =============== PAGE BASE STYLES =============== */
-
 body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
   background: var(--bg);
   color: var(--text);
-  font-family: "Poppins", sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Section wrapper (About) */
+/* ===== About Section ===== */
 .about-clean {
-  /* extra top padding because navbar is fixed (80px height approx) */
-  padding: 120px 24px 60px;
+  padding: 80px 20px;
+  background: var(--bg);
 }
 
-/* Container */
 .about-container {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
+  gap: 60px;
   align-items: center;
 }
 
-/* =============== TEXT BLOCK =============== */
-
 .about-text h1 {
-  font-size: 42px;
+  font-size: 40px;
   color: var(--roller);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   border-bottom: 3px solid var(--blinds);
   display: inline-block;
   padding-bottom: 6px;
-}
-
-.about-text h2 {
-  font-size: 28px;
-  color: var(--roller);
-  margin: 28px 0 14px;
 }
 
 .about-text p {
   font-size: 17px;
   line-height: 1.7;
   color: var(--text);
-  margin-bottom: 8px;
 }
 
-/* USP list */
-.about-text ol {
-  padding-left: 1.2rem;
-  margin: 0;
-}
-
-.about-text ol li {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text);
-  margin-bottom: 10px;
-}
-
-.about-text ol li strong {
-  color: var(--roller);
-}
-
-/* =============== IMAGE BLOCK =============== */
-
+/* Right Side Image Layout (like your reference image) */
 .about-image {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
 }
 
 .about-image img {
-  width: 85%;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
   transition: var(--transition);
 }
 
@@ -100,92 +67,48 @@ body {
   transform: scale(1.02);
 }
 
-/* =============== RESPONSIVE STYLES =============== */
-
-/* Tablets / Small laptops (<= 1024px) */
-@media (max-width: 1024px) {
-  .about-clean {
-    padding: 110px 20px 50px;
-  }
-
-  /* 2 columns → 1 column stacked */
+/* ===== Tablet Responsive ===== */
+@media (max-width: 900px) {
   .about-container {
     grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .about-text {
     text-align: center;
   }
 
-  .about-text h1 {
-    font-size: 36px;
-  }
-
-  .about-text h2 {
-    font-size: 24px;
-  }
-
-  .about-text p,
-  .about-text ol {
-    font-size: 16px;
-  }
-
-  .about-text ol {
-    padding-left: 0;
-    list-style-position: inside;
-  }
-
-  .about-text ol li {
-    max-width: 540px;
-    margin: 0 auto 10px;
-    text-align: left;
-  }
-
-  .about-image img {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-
-/* Mobiles (<= 768px) */
-@media (max-width: 768px) {
-  .about-clean {
-    padding: 100px 18px 40px;
+  .about-image {
+    align-items: center;
   }
 
   .about-text h1 {
-    font-size: 30px;
-  }
-
-  .about-text h2 {
-    font-size: 22px;
+    font-size: 32px;
   }
 
   .about-text p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .about-image img {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
-/* Small phones (<= 480px) */
-@media (max-width: 480px) {
+/* ===== Mobile Responsive ===== */
+@media (max-width: 600px) {
   .about-clean {
-    padding: 90px 16px 32px;
+    padding: 50px 15px;
   }
 
   .about-text h1 {
     font-size: 26px;
+    margin-top: 40px;
   }
 
-  .about-text h2 {
-    font-size: 20px;
-  }
-
-  .about-text ol li {
+  .about-text p {
     font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 100%;
   }
 }
