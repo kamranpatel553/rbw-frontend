@@ -1,0 +1,148 @@
+:root {
+      --roller: #0b3a66;
+      --blinds: #5ec5e6;
+      --bg: #f9f9f9;
+      --text: #333;
+      --white: #fff;
+      --muted: #6b7280;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .clients-section {
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .clients-section small {
+      color: var(--blinds);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .clients-section h2 {
+      font-size: 42px;
+      color: var(--roller);
+      margin: 12px 0 50px;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .client-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      transition: var(--transition);
+    }
+
+    .client-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .client-card img {
+      max-width: 140px;
+      max-height: 70px;
+      object-fit: contain;
+      transition: var(--transition);
+    }
+
+    .client-card:hover img {
+      filter: grayscale(0);
+    }
+
+    /* Slider styles */
+    .slider-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .clients-grid {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .client-card {
+      flex: 0 0 25%;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #cfd8dc;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .dot.active {
+      background: var(--roller);
+      width: 22px;
+      border-radius: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .clients-section h2 {
+        font-size: 32px;
+      }
+
+      .client-card {
+        flex: 0 0 50%;
+      }
+
+      .client-card img {
+        max-width: 120px;
+      }
+
+      .client-card img {
+        max-width: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .clients-section {
+        padding: 50px 15px;
+      }
+
+      .clients-section h2 {
+        font-size: 26px;
+      }
+
+      .client-card {
+        flex: 0 0 100%;
+      }
+
+      .clients-section h2 {
+        font-size: 26px;
+      }
+    }
