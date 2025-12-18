@@ -110,3 +110,16 @@ body {
     font-size: 32px;
   }
 }
+
+@media (max-width: 900px) {
+  .gallery-container {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-container {
+    column-count: 1;
+    padding: 0 15px;
+  }
+}

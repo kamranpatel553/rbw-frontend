@@ -19,7 +19,7 @@
 
 /* =======HERO SECTION=========== */
 .hero {
-  height: 100vh;
+  min-height: calc(100vh - 80px); /* Adjust height to account for navbar */
   margin-top: 80px;
   background-size: cover;
   background-position: center;
@@ -276,8 +276,9 @@
 /* =========RESPONSIVE (GLOBAL) TILL GALLERY GRID=========== */
 @media (max-width: 900px) {
   .hero {
-    padding: 90px 10px 16px;
+    padding: 40px 20px;
     text-align: center;
+    justify-content: center; /* Center content on tablet/mobile */
   }
 
   .hero-content h1 {
