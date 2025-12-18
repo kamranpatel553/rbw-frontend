@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/css/gallery.css">
   <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/before-after.css" />
 </head>
 
 <body>
@@ -16,69 +17,187 @@
   <div id="navbar"></div>
   <script src="assets/js/load-components.js"></script>
 
-<!-- Gallrery Page -->
-  <header class="gallery-header">
+<!-- Gallery Page -->
+  <!-- <header class="gallery-main-header">
     <h1>Our Gallery</h1>
-  </header>
+  </header> -->
 
-  <section class="gallery-container">
-    <!-- Add as many images as you want -->
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/1200x/68/fb/0b/68fb0bf0679552e0f7e67aa84a3fbf69.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/eb/c7/b3/ebc7b34ccccfbd3da9d46dec2f6c9082.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/d0/e1/38/d0e13882c780ca949b79c5918ca1ee3c.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/fc/90/7c/fc907ca46b719df3513f5f917dcb9738.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/1200x/68/fb/0b/68fb0bf0679552e0f7e67aa84a3fbf69.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/eb/c7/b3/ebc7b34ccccfbd3da9d46dec2f6c9082.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/d0/e1/38/d0e13882c780ca949b79c5918ca1ee3c.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/fc/90/7c/fc907ca46b719df3513f5f917dcb9738.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/1200x/68/fb/0b/68fb0bf0679552e0f7e67aa84a3fbf69.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/eb/c7/b3/ebc7b34ccccfbd3da9d46dec2f6c9082.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/d0/e1/38/d0e13882c780ca949b79c5918ca1ee3c.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/fc/90/7c/fc907ca46b719df3513f5f917dcb9738.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/1200x/68/fb/0b/68fb0bf0679552e0f7e67aa84a3fbf69.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/eb/c7/b3/ebc7b34ccccfbd3da9d46dec2f6c9082.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/d0/e1/38/d0e13882c780ca949b79c5918ca1ee3c.jpg" alt="Gallery Image">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.pinimg.com/736x/fc/90/7c/fc907ca46b719df3513f5f917dcb9738.jpg" alt="Gallery Image">
-    </div>
+  
+  <!-- Header -->
+  <section class="gallery-header">
+    <h5>GALLERY</h5>
+    <h1>Where to use?</h1>
   </section>
 
-  <!-- Lightbox -->
-  <div id="lightbox">
-    <span id="closeBtn">&times;</span>
-    <img id="lightboxImg" src="" alt="">
+  <!-- Main Image -->
+  <section class="gallery-main">
+    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" alt="Window blinds living room">
+  </section>
+
+  <!-- Thumbnails -->
+  <section class="thumbnails">
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" alt="Living Room">
+    </div>
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36" alt="Bedroom">
+    </div>
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae" alt="Kitchen">
+    </div>
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f" alt="Office">
+    </div>
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb" alt="Dining">
+    </div>
+  </section>
+<!-- Before and After Slider -->
+
+<!-- Our works Page -->
+  <div class="container">
+    <h1>Our Works</h1>
+
+    <div class="works-grid">
+
+      <!-- Work Item 1 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider1">
+          <img src="https://i.pinimg.com/1200x/4c/c2/40/4cc240b7e8fb8d8c9297d7500e243624.jpg" alt="Before"
+            class="before-image">
+          <img src="https://i.pinimg.com/1200x/e8/7e/61/e87e6147b0e5e8d1081772265bf07823.jpg" alt="After"
+            class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Renovation in the balcony</div>
+      </div>
+
+      <!-- Work Item 2 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider2">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Before" class="before-image">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Kitchen Remodeling</div>
+      </div>
+
+      <!-- Work Item 3 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider3">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Before" class="before-image">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Living Room Transformation</div>
+      </div>
+      <div class="work-item">
+        <div class="slider-container" id="slider1">
+          <img src="https://i.pinimg.com/1200x/4c/c2/40/4cc240b7e8fb8d8c9297d7500e243624.jpg" alt="Before"
+            class="before-image">
+          <img src="https://i.pinimg.com/1200x/e8/7e/61/e87e6147b0e5e8d1081772265bf07823.jpg" alt="After"
+            class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Renovation in the balcony</div>
+      </div>
+
+      <!-- Work Item 2 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider2">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Before" class="before-image">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Kitchen Remodeling</div>
+      </div>
+
+      <!-- Work Item 3 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider3">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Before" class="before-image">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Living Room Transformation</div>
+      </div>
+      <div class="work-item">
+        <div class="slider-container" id="slider1">
+          <img src="https://i.pinimg.com/1200x/4c/c2/40/4cc240b7e8fb8d8c9297d7500e243624.jpg" alt="Before"
+            class="before-image">
+          <img src="https://i.pinimg.com/1200x/e8/7e/61/e87e6147b0e5e8d1081772265bf07823.jpg" alt="After"
+            class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Renovation in the balcony</div>
+      </div>
+
+      <!-- Work Item 2 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider2">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Before" class="before-image">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Kitchen Remodeling</div>
+      </div>
+
+      <!-- Work Item 3 -->
+      <div class="work-item">
+        <div class="slider-container" id="slider3">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Before" class="before-image">
+          <img
+            src="https://images.unsplash.com/photo-1589927986082-137d73a83e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="After" class="after-image">
+          <div class="slider-handle"></div>
+          <div class="label before-label">Before</div>
+          <div class="label after-label">After</div>
+        </div>
+        <div class="work-title">Living Room Transformation</div>
+      </div>
+
+    </div>
   </div>
   </header>
+  <!-- Our works Page Ends -->
 
   <!-- Footer js -->
   <div id="footer"></div>
@@ -86,6 +205,8 @@
 
   <!-- Gallery JS -->
   <script src="assets/js/gallery.js"></script>
-</body>
+  <!-- Our Works JS -->
+   <script src="assets/js/before-after.js"></script>
+</body> 
 
 </html>
